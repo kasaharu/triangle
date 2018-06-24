@@ -57,6 +57,7 @@
     ],
     "no-arg": true,
     "no-bitwise": true,
+    "no-boolean-literal-compare": true,
     "no-console": [
       true,
       "debug",
