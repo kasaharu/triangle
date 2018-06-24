@@ -11,6 +11,10 @@
       "check-space"
     ],
     "curly": true,
+    "cyclomatic-complexity": [
+      true,
+      20
+    ],
     "deprecation": {
       "severity": "warn"
     },
