@@ -35,6 +35,10 @@
     "linebreak-style": [
       true, "LF"
     ],
+    "max-file-line-count": [
+      true,
+      100
+    ],
     "max-line-length": [
       true,
       140
