@@ -7,54 +7,46 @@ jobs:
   build:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
-
     steps:
       - checkout
       - run: echo "Start build"
       - run: npm install
       - run: npm run build
-
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
-
     steps:
       - checkout
       - run: echo "Start lint"
       - run: npm install
       - run: npm run lint
-
   test:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
-
     steps:
       - checkout
       - run: echo "Start test"
       - run: npm install
       - run: npm run test -- --watch=false
-
   e2e:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
-
     steps:
       - checkout
       - run: echo "Start e2e"
       - run: npm install
       - run: npm run e2e
-
 workflows:
   version: 2
   build_and_test:
     jobs:
       - build
-      - lint
+      - lint:
           requires:
             - build
-      - test
+      - test:
           requires:
             - build
-      - e2e
+      - e2e:
           requires:
             - build
