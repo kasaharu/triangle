@@ -32,6 +32,9 @@
     ],
     "interface-over-type-literal": true,
     "label-position": true,
+    "linebreak-style": [
+      true, "LF"
+    ],
     "max-line-length": [
       true,
       140
