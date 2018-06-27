@@ -10,32 +10,32 @@ jobs:
     steps:
       - checkout
       - run: echo "Start build"
-      - run: npm install
-      - run: npm run build
+      - run: yarn install
+      - run: yarn build
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
       - run: echo "Start lint"
-      - run: npm install
-      - run: npm run lint
+      - run: yarn install
+      - run: yarn lint
   stylelint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
       - run: echo "Start stylelint"
-      - run: npm install
-      - run: npm run stylelint
+      - run: yarn install
+      - run: yarn stylelint
   test:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test"
-      - run: npm install
-      - run: npm run test -- --watch=false --code-coverage
+      - run: yarn install
+      - run: yarn test --watch=false --code-coverage
       - store_artifacts:
           path: coverage
   e2e:
@@ -44,8 +44,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start e2e"
-      - run: npm install
-      - run: npm run e2e
+      - run: yarn install
+      - run: yarn e2e
 workflows:
   version: 2
   build_and_test:
