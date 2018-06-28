@@ -36,14 +36,24 @@ jobs:
       - run: echo "Start stylelint"
       - run: yarn install
       - run: yarn stylelint
-  test:
+  test-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start test"
+      - run: echo "Start test for triangle"
       - run: yarn install
-      - run: yarn test --watch=false --code-coverage
+      - run: yarn test triangle --watch=false --code-coverage
+      - store_artifacts:
+          path: coverage
+  test-lib:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for gadget"
+      - run: yarn install
+      - run: yarn test gadget --watch=false --code-coverage
       - store_artifacts:
           path: coverage
   e2e:
@@ -66,9 +76,12 @@ workflows:
       - stylelint:
           requires:
             - build-app
-      - test:
+      - test-app:
           requires:
             - build-app
+      - test-lib:
+          requires:
+            - build-lib
       - e2e:
           requires:
             - build-app
