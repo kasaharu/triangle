@@ -4,14 +4,22 @@
 #
 version: 2
 jobs:
-  build:
+  build-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start build"
+      - run: echo "Start build for triangle"
       - run: yarn install
-      - run: yarn build
+      - run: yarn build triangle
+  build-lib:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for gadget"
+      - run: yarn install
+      - run: yarn build gadget
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -50,16 +58,17 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - build-app
+      - build-lib
       - lint:
           requires:
-            - build
+            - build-app
       - stylelint:
           requires:
-            - build
+            - build-app
       - test:
           requires:
-            - build
+            - build-app
       - e2e:
           requires:
-            - build
+            - build-app
