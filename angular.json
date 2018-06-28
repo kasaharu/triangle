@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "triangle"
+  "defaultProject": "triangle",
+  "cli": {
+    "packageManager": "yarn"
+  }
 }
