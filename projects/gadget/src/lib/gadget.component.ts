@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
       gadget works!
     </p>
   `,
-  styles: []
+  styles: [],
 })
 export class GadgetComponent implements OnInit {
 

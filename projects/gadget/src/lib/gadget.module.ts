@@ -5,6 +5,6 @@ import { GadgetComponent } from './gadget.component';
   imports: [
   ],
   declarations: [GadgetComponent],
-  exports: [GadgetComponent]
+  exports: [GadgetComponent],
 })
 export class GadgetModule { }

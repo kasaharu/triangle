@@ -8,7 +8,7 @@ describe('GadgetComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GadgetComponent ]
+      declarations: [ GadgetComponent ],
     })
     .compileComponents();
   }));
