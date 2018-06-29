@@ -6,6 +6,6 @@ import { ButtonComponent } from './atoms/button/button.component';
   imports: [
   ],
   declarations: [GadgetComponent, ButtonComponent],
-  exports: [GadgetComponent],
+  exports: [GadgetComponent, ButtonComponent],
 })
 export class GadgetModule { }
