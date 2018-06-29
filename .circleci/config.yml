@@ -44,6 +44,7 @@ jobs:
       - checkout
       - run: echo "Start test for triangle"
       - run: yarn install
+      - run: yarn build gadget
       - run: yarn test triangle --watch=false --code-coverage
       - store_artifacts:
           path: coverage
