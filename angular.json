@@ -125,6 +125,51 @@
           }
         }
       }
+    },
+    "gadget": {
+      "root": "projects/gadget",
+      "sourceRoot": "projects/gadget/src",
+      "projectType": "library",
+      "prefix": "gad",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/gadget/tsconfig.lib.json",
+            "project": "projects/gadget/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/gadget/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gadget/src/test.ts",
+            "tsConfig": "projects/gadget/tsconfig.spec.json",
+            "karmaConfig": "projects/gadget/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gadget/tsconfig.lib.json",
+              "projects/gadget/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "triangle",

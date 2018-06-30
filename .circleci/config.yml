@@ -4,14 +4,23 @@
 #
 version: 2
 jobs:
-  build:
+  build-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start build"
+      - run: echo "Start build for triangle"
       - run: yarn install
-      - run: yarn build
+      - run: yarn build gadget
+      - run: yarn build triangle
+  build-lib:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for gadget"
+      - run: yarn install
+      - run: yarn build gadget
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -28,14 +37,25 @@ jobs:
       - run: echo "Start stylelint"
       - run: yarn install
       - run: yarn stylelint
-  test:
+  test-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start test"
+      - run: echo "Start test for triangle"
       - run: yarn install
-      - run: yarn test --watch=false --code-coverage
+      - run: yarn build gadget
+      - run: yarn test triangle --watch=false --code-coverage
+      - store_artifacts:
+          path: coverage
+  test-lib:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for gadget"
+      - run: yarn install
+      - run: yarn test gadget --watch=false --code-coverage
       - store_artifacts:
           path: coverage
   e2e:
@@ -45,21 +65,28 @@ jobs:
       - checkout
       - run: echo "Start e2e"
       - run: yarn install
+      - run: yarn build gadget
       - run: yarn e2e
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
+      - build-lib
+      - build-app:
+          requires:
+            - build-lib
       - lint:
           requires:
-            - build
+            - build-app
       - stylelint:
           requires:
-            - build
-      - test:
+            - build-app
+      - test-app:
           requires:
-            - build
+            - build-app
+      - test-lib:
+          requires:
+            - build-lib
       - e2e:
           requires:
-            - build
+            - build-app
