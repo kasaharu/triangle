@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
+    "build-lib": "ng build gadget",
+    "build-app": "ng build triangle",
+    "test-lib": "ng test gadget",
+    "test-app": "ng test triangle",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "stylelint": "stylelint 'src/**/*.scss'"

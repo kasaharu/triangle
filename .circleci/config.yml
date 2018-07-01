@@ -11,8 +11,8 @@ jobs:
       - checkout
       - run: echo "Start build for triangle"
       - run: yarn install
-      - run: yarn build gadget
-      - run: yarn build triangle
+      - run: yarn build-lib
+      - run: yarn build-app
   build-lib:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -20,7 +20,7 @@ jobs:
       - checkout
       - run: echo "Start build for gadget"
       - run: yarn install
-      - run: yarn build gadget
+      - run: yarn build-lib
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -44,8 +44,8 @@ jobs:
       - checkout
       - run: echo "Start test for triangle"
       - run: yarn install
-      - run: yarn build gadget
-      - run: yarn test triangle --watch=false --code-coverage
+      - run: yarn build-lib
+      - run: yarn test-app --watch=false --code-coverage
       - store_artifacts:
           path: coverage
   test-lib:
@@ -55,7 +55,7 @@ jobs:
       - checkout
       - run: echo "Start test for gadget"
       - run: yarn install
-      - run: yarn test gadget --watch=false --code-coverage
+      - run: yarn test-lib --watch=false --code-coverage
       - store_artifacts:
           path: coverage
   e2e:
@@ -65,7 +65,7 @@ jobs:
       - checkout
       - run: echo "Start e2e"
       - run: yarn install
-      - run: yarn build gadget
+      - run: yarn build-lib
       - run: yarn e2e
 workflows:
   version: 2
