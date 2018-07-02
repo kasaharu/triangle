@@ -170,6 +170,129 @@
           }
         }
       }
+    },
+    "gh-render": {
+      "root": "projects/gh-render/",
+      "sourceRoot": "projects/gh-render/src",
+      "projectType": "application",
+      "prefix": "gh",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/gh-render",
+            "index": "projects/gh-render/src/index.html",
+            "main": "projects/gh-render/src/main.ts",
+            "polyfills": "projects/gh-render/src/polyfills.ts",
+            "tsConfig": "projects/gh-render/tsconfig.app.json",
+            "assets": [
+              "projects/gh-render/src/favicon.ico",
+              "projects/gh-render/src/assets"
+            ],
+            "styles": [
+              "projects/gh-render/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/gh-render/src/environments/environment.ts",
+                  "with": "projects/gh-render/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "gh-render:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "gh-render:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "gh-render:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/gh-render/src/test.ts",
+            "polyfills": "projects/gh-render/src/polyfills.ts",
+            "tsConfig": "projects/gh-render/tsconfig.spec.json",
+            "karmaConfig": "projects/gh-render/karma.conf.js",
+            "styles": [
+              "projects/gh-render/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/gh-render/src/favicon.ico",
+              "projects/gh-render/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/gh-render/tsconfig.app.json",
+              "projects/gh-render/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "gh-render-e2e": {
+      "root": "projects/gh-render-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/gh-render-e2e/protractor.conf.js",
+            "devServerTarget": "gh-render:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "gh-render:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/gh-render-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "triangle",
