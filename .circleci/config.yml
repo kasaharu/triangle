@@ -4,6 +4,14 @@
 #
 version: 2
 jobs:
+  build-lib:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for gadget"
+      - run: yarn install
+      - run: yarn build-lib
   build-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -13,14 +21,15 @@ jobs:
       - run: yarn install
       - run: yarn build-lib
       - run: yarn build-app
-  build-lib:
+  build-gh:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start build for gadget"
+      - run: echo "Start build for gh-render"
       - run: yarn install
       - run: yarn build-lib
+      - run: yarn build-gh
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -37,6 +46,16 @@ jobs:
       - run: echo "Start stylelint"
       - run: yarn install
       - run: yarn stylelint
+  test-lib:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for gadget"
+      - run: yarn install
+      - run: yarn test-lib --watch=false --code-coverage
+      - store_artifacts:
+          path: coverage
   test-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -48,25 +67,35 @@ jobs:
       - run: yarn test-app --watch=false --code-coverage
       - store_artifacts:
           path: coverage
-  test-lib:
+  test-gh:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start test for gadget"
-      - run: yarn install
-      - run: yarn test-lib --watch=false --code-coverage
-      - store_artifacts:
-          path: coverage
-  e2e:
-    docker:
-      - image: circleci/node:8.11.3-stretch-browsers
-    steps:
-      - checkout
-      - run: echo "Start e2e"
+      - run: echo "Start test for gh-render"
       - run: yarn install
       - run: yarn build-lib
-      - run: yarn e2e
+      - run: yarn test-gh --watch=false --code-coverage
+      - store_artifacts:
+          path: coverage
+  e2e-app:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start e2e-app"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn e2e-app
+  e2e-gh:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start e2e-gh"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn e2e-gh
 workflows:
   version: 2
   build_and_test:
@@ -75,18 +104,27 @@ workflows:
       - build-app:
           requires:
             - build-lib
+      - build-gh:
+          requires:
+            - build-lib
       - lint:
           requires:
             - build-app
       - stylelint:
           requires:
             - build-app
-      - test-app:
-          requires:
-            - build-app
       - test-lib:
           requires:
             - build-lib
-      - e2e:
+      - test-app:
           requires:
             - build-app
+      - test-gh:
+          requires:
+            - build-gh
+      - e2e-app:
+          requires:
+            - build-app
+      - e2e-gh:
+          requires:
+            - build-gh
