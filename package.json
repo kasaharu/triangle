@@ -14,7 +14,7 @@
     "lint": "ng lint",
     "e2e-app": "ng e2e triangle-e2e",
     "e2e-gh": "ng e2e gh-render-e2e",
-    "stylelint": "stylelint 'src/**/*.scss'"
+    "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'"
   },
   "private": true,
   "dependencies": {
