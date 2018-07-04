@@ -37,7 +37,7 @@
     "typescript": "2.9.2",
     "@angular-devkit/build-ng-packagr": "0.6.8",
     "ng-packagr": "3.0.3",
-    "tsickle": "0.30.0",
+    "tsickle": "0.32.0",
     "tslib": "1.9.3",
     "@angular/cli": "6.0.8",
     "@angular/language-service": "^6.0.3",
