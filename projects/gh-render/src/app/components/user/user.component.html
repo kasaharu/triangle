@@ -1,3 +1,10 @@
-<p>
-  user works!
-</p>
+<div class="mod-user-list" *ngIf="userList">
+  <div class="mod-user" *ngFor="let user of userList">
+    <img class="user-avatar" src="{{user.avatar_url}}" />
+    <div class="user-info">
+      <div>{{user.id}}</div>
+      <div>{{user.login}}</div>
+      <a href="{{user.html_url}}" target="_blank">GitHub へ遷移</a>
+    </div>
+  </div>
+</div>

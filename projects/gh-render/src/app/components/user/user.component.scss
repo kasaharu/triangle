@@ -1,1 +1,18 @@
-/* Only comments */
+.mod-user-list {
+  .mod-user {
+    display: flex;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: solid 1px #e1e4e8;
+
+    .user-avatar {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 0.5rem;
+    }
+
+    .user-info {
+      margin-left: 1rem;
+    }
+  }
+}
