@@ -26,4 +26,13 @@ describe('UserService', () => {
     expect(req.request.method).toEqual('GET');
     expect(req.request.url).toEqual('https://api.github.com/users');
   }));
+
+  it('#fetchGitHubUser', inject([UserService], (service: UserService) => {
+    const userName = 'kasaharu';
+    service.fetchGitHubUser(userName).subscribe();
+    const req = httpTestingController.expectOne(`${service.targetUrl}/${userName}`);
+
+    expect(req.request.method).toEqual('GET');
+    expect(req.request.url).toEqual('https://api.github.com/users/kasaharu');
+  }));
 });
