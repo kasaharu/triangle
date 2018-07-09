@@ -39,6 +39,15 @@ jobs:
       - run: yarn install
       - run: yarn build-lib
       - run: yarn build-tm
+  build-cnt:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for counter"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn build-cnt
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -98,6 +107,17 @@ jobs:
       - run: yarn test-tm --watch=false --code-coverage
       - store_artifacts:
           path: coverage
+  test-cnt:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for counter"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn test-cnt --watch=false --code-coverage
+      - store_artifacts:
+          path: coverage
   e2e-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -125,6 +145,15 @@ jobs:
       - run: yarn install
       - run: yarn build-lib
       - run: yarn e2e-tm
+  e2e-cnt:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start e2e-cnt"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn e2e-cnt
 workflows:
   version: 2
   build_and_test:
@@ -137,6 +166,9 @@ workflows:
           requires:
             - build-lib
       - build-tm:
+          requires:
+            - build-lib
+      - build-cnt:
           requires:
             - build-lib
       - lint:
@@ -157,6 +189,9 @@ workflows:
       - test-tm:
           requires:
             - build-tm
+      - test-cnt:
+          requires:
+            - build-cnt
       - e2e-app:
           requires:
             - build-app
@@ -166,3 +201,6 @@ workflows:
       - e2e-tm:
           requires:
             - build-tm
+      - e2e-cnt:
+          requires:
+            - build-cnt
