@@ -30,6 +30,15 @@ jobs:
       - run: yarn install
       - run: yarn build-lib
       - run: yarn build-gh
+  build-tm:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for todo-manager"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn build-tm
   lint:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -78,6 +87,17 @@ jobs:
       - run: yarn test-gh --watch=false --code-coverage
       - store_artifacts:
           path: coverage
+  test-tm:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for todo-manager"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn test-tm --watch=false --code-coverage
+      - store_artifacts:
+          path: coverage
   e2e-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -96,6 +116,15 @@ jobs:
       - run: yarn install
       - run: yarn build-lib
       - run: yarn e2e-gh
+  e2e-tm:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start e2e-tm"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn e2e-tm
 workflows:
   version: 2
   build_and_test:
@@ -105,6 +134,9 @@ workflows:
           requires:
             - build-lib
       - build-gh:
+          requires:
+            - build-lib
+      - build-tm:
           requires:
             - build-lib
       - lint:
@@ -122,9 +154,15 @@ workflows:
       - test-gh:
           requires:
             - build-gh
+      - test-tm:
+          requires:
+            - build-tm
       - e2e-app:
           requires:
             - build-app
       - e2e-gh:
           requires:
             - build-gh
+      - e2e-tm:
+          requires:
+            - build-tm
