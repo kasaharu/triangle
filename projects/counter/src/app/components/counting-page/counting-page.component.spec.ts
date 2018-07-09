@@ -8,7 +8,7 @@ describe('CountingPageComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CountingPageComponent ]
+      declarations: [ CountingPageComponent ],
     })
     .compileComponents();
   }));
