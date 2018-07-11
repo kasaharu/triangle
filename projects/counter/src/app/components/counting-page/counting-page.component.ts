@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { CounterState } from '../../models/counter-state';
-import { CounterActionTypes } from '../../actions/counter';
+import * as CounterActions from '../../actions/counter';
 
 @Component({
   selector: 'cnt-counting-page',
@@ -21,14 +21,14 @@ export class CountingPageComponent implements OnInit {
   }
 
   increment() {
-    this.store.dispatch({ type: CounterActionTypes.INCREMENT });
+    this.store.dispatch(new CounterActions.Increment());
   }
 
   decrement() {
-    this.store.dispatch({ type: CounterActionTypes.DECREMENT });
+    this.store.dispatch(new CounterActions.Decrement());
   }
 
   reset() {
-    this.store.dispatch({ type: CounterActionTypes.RESET });
+    this.store.dispatch(new CounterActions.Reset(0));
   }
 }
