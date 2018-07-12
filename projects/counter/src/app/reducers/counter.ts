@@ -10,6 +10,8 @@ export function counterReducer(state: number = initialState, action: CounterActi
       return state - 1;
     case CounterActionTypes.RESET:
       return 0;
+    case CounterActionTypes.SAVE:
+      return state;
     default:
       return state;
   }
