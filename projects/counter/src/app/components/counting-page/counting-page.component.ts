@@ -33,5 +33,6 @@ export class CountingPageComponent implements OnInit {
   }
 
   save() {
+    this.store.dispatch(new CounterActions.Save());
   }
 }
