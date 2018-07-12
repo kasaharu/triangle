@@ -20,4 +20,8 @@ export class Reset implements Action {
   constructor(public payload: number) {}
 }
 
-export type CounterActionsUnion = Increment | Decrement | Reset;
+export class Save implements Action {
+  readonly type = CounterActionTypes.SAVE;
+}
+
+export type CounterActionsUnion = Increment | Decrement | Reset | Save;
