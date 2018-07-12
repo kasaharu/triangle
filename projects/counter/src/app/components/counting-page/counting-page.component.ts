@@ -31,4 +31,7 @@ export class CountingPageComponent implements OnInit {
   reset() {
     this.store.dispatch(new CounterActions.Reset(0));
   }
+
+  save() {
+  }
 }
