@@ -1,13 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { StoreModule } from '@ngrx/store';
+import { StoreModule, Store } from '@ngrx/store';
 
 import { counterReducer } from '../../reducers/counter';
+import * as CounterActions from '../../actions/counter';
 
+import { CounterState } from '../../models/counter-state';
 import { CountingPageComponent } from './counting-page.component';
 
 describe('CountingPageComponent', () => {
   let component: CountingPageComponent;
   let fixture: ComponentFixture<CountingPageComponent>;
+  let store: Store<CounterState>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -20,6 +23,9 @@ describe('CountingPageComponent', () => {
   }));
 
   beforeEach(() => {
+    store = TestBed.get(Store);
+    spyOn(store, 'dispatch').and.callThrough();
+
     fixture = TestBed.createComponent(CountingPageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
@@ -27,5 +33,29 @@ describe('CountingPageComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should dispatch the action to Increment()', () => {
+    const action = new CounterActions.Increment();
+
+    component.increment();
+
+    expect(store.dispatch).toHaveBeenCalledWith(action);
+  });
+
+  it('should dispatch the action to Decrement()', () => {
+    const action = new CounterActions.Decrement();
+
+    component.decrement();
+
+    expect(store.dispatch).toHaveBeenCalledWith(action);
+  });
+
+  it('should dispatch the action to Reset()', () => {
+    const action = new CounterActions.Reset(0);
+
+    component.reset();
+
+    expect(store.dispatch).toHaveBeenCalledWith(action);
   });
 });
