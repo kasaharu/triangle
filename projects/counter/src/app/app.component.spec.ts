@@ -1,10 +1,17 @@
 import { TestBed, async } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+
+import { counterReducer } from './reducers/counter';
+
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
+      ],
+      imports: [
+        StoreModule.forRoot({ count: counterReducer }),
       ],
     }).compileComponents();
   }));
