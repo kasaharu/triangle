@@ -58,4 +58,12 @@ describe('CountingPageComponent', () => {
 
     expect(store.dispatch).toHaveBeenCalledWith(action);
   });
+
+  it('should dispatch the action to Save()', () => {
+    const action = new CounterActions.Save();
+
+    component.save();
+
+    expect(store.dispatch).toHaveBeenCalledWith(action);
+  });
 });

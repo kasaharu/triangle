@@ -2,6 +2,10 @@ import * as CounterActions from '../actions/counter';
 import { counterReducer } from './counter';
 
 describe('counterReducer', () => {
+  it('should restore', () => {
+    expect(counterReducer(0, new CounterActions.Restore(10))).toBe(10);
+  });
+
   it('should increment', () => {
     expect(counterReducer(0, new CounterActions.Increment())).toBe(1);
   });
@@ -14,4 +18,7 @@ describe('counterReducer', () => {
     expect(counterReducer(0, new CounterActions.Reset(0))).toBe(0);
   });
 
+  it('should save', () => {
+    expect(counterReducer(0, new CounterActions.Save())).toBe(0);
+  });
 });
