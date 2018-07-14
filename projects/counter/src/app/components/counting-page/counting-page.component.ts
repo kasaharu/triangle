@@ -18,6 +18,12 @@ export class CountingPageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.restore();
+  }
+
+  restore() {
+    const count = localStorage.getItem('triangle-counter-count');
+    this.store.dispatch(new CounterActions.Restore(+count));
   }
 
   increment() {
