@@ -16,6 +16,8 @@ export function counterReducer(state: number = initialState, action: CounterActi
       return 0;
     case CounterActionTypes.SAVE:
       return state;
+    case CounterActionTypes.SAVE_SUCCESS:
+      return state;
     default:
       return state;
   }
