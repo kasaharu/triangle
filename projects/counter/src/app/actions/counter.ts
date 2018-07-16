@@ -11,7 +11,6 @@ export enum CounterActionTypes {
 
 export class Restore implements Action {
   readonly type = CounterActionTypes.RESTORE;
-  constructor(public payload: number) {}
 }
 
 export class RestoreSuccess implements Action {
