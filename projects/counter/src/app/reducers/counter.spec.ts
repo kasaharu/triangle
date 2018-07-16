@@ -6,6 +6,10 @@ describe('counterReducer', () => {
     expect(counterReducer(0, new CounterActions.Restore())).toBe(0);
   });
 
+  it('should restore_success', () => {
+    expect(counterReducer(0, new CounterActions.RestoreSuccess(10))).toBe(10);
+  });
+
   it('should increment', () => {
     expect(counterReducer(0, new CounterActions.Increment())).toBe(1);
   });
