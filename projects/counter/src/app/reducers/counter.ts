@@ -5,6 +5,8 @@ const initialState = 0;
 export function counterReducer(state: number = initialState, action: CounterActionsUnion) {
   switch (action.type) {
     case CounterActionTypes.RESTORE:
+      return state;
+    case CounterActionTypes.RESTORE_SUCCESS:
       return action.payload;
     case CounterActionTypes.INCREMENT:
       return state + 1;
@@ -13,6 +15,8 @@ export function counterReducer(state: number = initialState, action: CounterActi
     case CounterActionTypes.RESET:
       return 0;
     case CounterActionTypes.SAVE:
+      return state;
+    case CounterActionTypes.SAVE_SUCCESS:
       return state;
     default:
       return state;
