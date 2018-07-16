@@ -40,4 +40,11 @@ export class SaveSuccess implements Action {
   readonly type = CounterActionTypes.SAVE_SUCCESS;
 }
 
-export type CounterActionsUnion = Restore | RestoreSuccess | Increment | Decrement | Reset | Save | SaveSuccess;
+export type CounterActionsUnion =
+  | Restore
+  | RestoreSuccess
+  | Increment
+  | Decrement
+  | Reset
+  | Save
+  | SaveSuccess;
