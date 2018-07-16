@@ -39,8 +39,5 @@ export class CountingPageComponent implements OnInit {
 
   save() {
     this.store.dispatch(new CounterActions.Save());
-    this.count$.subscribe(count => {
-      localStorage.setItem('triangle-counter-count', count.toString());
-    });
   }
 }
