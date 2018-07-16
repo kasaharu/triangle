@@ -25,4 +25,8 @@ describe('counterReducer', () => {
   it('should save', () => {
     expect(counterReducer(0, new CounterActions.Save())).toBe(0);
   });
+
+  it('should save_success', () => {
+    expect(counterReducer(0, new CounterActions.SaveSuccess())).toBe(0);
+  });
 });
