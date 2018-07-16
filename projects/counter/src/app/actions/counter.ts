@@ -7,6 +7,7 @@ export enum CounterActionTypes {
   DECREMENT = 'DECREMENT',
   RESET = 'RESET',
   SAVE = 'SAVE',
+  SAVE_SUCCESS = 'SAVE_SUCCESS',
 }
 
 export class Restore implements Action {
@@ -35,4 +36,8 @@ export class Save implements Action {
   readonly type = CounterActionTypes.SAVE;
 }
 
-export type CounterActionsUnion = Restore | RestoreSuccess | Increment | Decrement | Reset | Save;
+export class SaveSuccess implements Action {
+  readonly type = CounterActionTypes.SAVE_SUCCESS;
+}
+
+export type CounterActionsUnion = Restore | RestoreSuccess | Increment | Decrement | Reset | Save | SaveSuccess;
