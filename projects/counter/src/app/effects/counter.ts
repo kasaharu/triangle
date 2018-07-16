@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Actions, Effect, ofType } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
-import { mergeMap, map } from 'rxjs/operators';
+import { mergeMap, map, tap, withLatestFrom } from 'rxjs/operators';
 
 import * as CounterActions from '../actions/counter';
+import { CounterState } from '../models/counter-state';
 
 @Injectable()
 export class CounterEffects {
-  constructor(private actions$: Actions) {}
+  constructor(private actions$: Actions, private store: Store<CounterState>) {}
 
   @Effect()
   restore$: Observable<Action> = this.actions$.pipe(
@@ -18,5 +19,13 @@ export class CounterEffects {
         map(data => new CounterActions.RestoreSuccess(data)),
       ),
     ),
+  );
+
+  @Effect()
+  save$: Observable<Action> = this.actions$.pipe(
+    ofType(CounterActions.CounterActionTypes.SAVE),
+    withLatestFrom(this.store),
+    tap(([action, state]) => localStorage.setItem('triangle-counter-count', state.count.toString())),
+    map(data => new CounterActions.SaveSuccess()),
   );
 }
