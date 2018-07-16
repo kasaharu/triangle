@@ -3,7 +3,7 @@ import { counterReducer } from './counter';
 
 describe('counterReducer', () => {
   it('should restore', () => {
-    expect(counterReducer(0, new CounterActions.Restore(10))).toBe(10);
+    expect(counterReducer(0, new CounterActions.Restore())).toBe(0);
   });
 
   it('should increment', () => {
