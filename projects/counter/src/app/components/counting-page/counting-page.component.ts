@@ -3,7 +3,7 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { CounterState } from '../../models/counter-state';
-import * as CounterActions from '../../store/counter.actions';
+import * as CounterActions from '../../store/counter/counter.actions';
 
 @Component({
   selector: 'cnt-counting-page',
