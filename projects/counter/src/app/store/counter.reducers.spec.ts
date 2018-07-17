@@ -1,4 +1,4 @@
-import * as CounterActions from '../actions/counter';
+import * as CounterActions from './counter.actions';
 import { counterReducer } from './counter.reducers';
 
 describe('counterReducer', () => {

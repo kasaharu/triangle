@@ -4,7 +4,7 @@ import { Action, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { mergeMap, map, tap, withLatestFrom } from 'rxjs/operators';
 
-import * as CounterActions from '../actions/counter';
+import * as CounterActions from '../store/counter.actions';
 import { CounterState } from '../models/counter-state';
 
 @Injectable()
