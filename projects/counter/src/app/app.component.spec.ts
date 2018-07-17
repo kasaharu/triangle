@@ -1,7 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 
-import { counterReducer } from './store/counter';
+import { counterReducer } from './store/counter.reducers';
 
 import { AppComponent } from './app.component';
 import { CountingPageComponent } from './components/counting-page/counting-page.component';

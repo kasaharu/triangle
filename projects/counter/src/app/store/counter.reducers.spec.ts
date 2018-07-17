@@ -1,5 +1,5 @@
 import * as CounterActions from '../actions/counter';
-import { counterReducer } from './counter';
+import { counterReducer } from './counter.reducers';
 
 describe('counterReducer', () => {
   it('should restore', () => {

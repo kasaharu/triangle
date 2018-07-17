@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule, Store } from '@ngrx/store';
 
-import { counterReducer } from '../../store/counter';
+import { counterReducer } from '../../store/counter.reducers';
 import * as CounterActions from '../../actions/counter';
 
 import { CounterState } from '../../models/counter-state';
