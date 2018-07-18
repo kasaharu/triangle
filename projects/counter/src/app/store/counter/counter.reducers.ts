@@ -1,4 +1,4 @@
-import { CounterActionTypes, CounterActionsUnion } from '../actions/counter';
+import { CounterActionTypes, CounterActionsUnion } from './counter.actions';
 
 const initialState = 0;
 

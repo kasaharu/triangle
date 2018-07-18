@@ -1,8 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule, Store } from '@ngrx/store';
 
-import { counterReducer } from '../../reducers/counter';
-import * as CounterActions from '../../actions/counter';
+import { counterReducer } from '../../store/counter/counter.reducers';
+import * as CounterActions from '../../store/counter/counter.actions';
 
 import { CounterState } from '../../models/counter-state';
 import { CountingPageComponent } from './counting-page.component';
