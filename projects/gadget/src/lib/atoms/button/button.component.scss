@@ -1,1 +1,77 @@
-/* Only comments */
+.gad-a-btn {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 20px;
+  color: #24292e;
+  border-color: #eff3f6;
+  padding: 6px 12px;
+  background-color: #e6ebf1;
+  background-image: linear-gradient(-180deg, #fafbfc 0%, #eff3f6 90%);
+  white-space: nowrap;
+  vertical-align: middle;
+  border: 1px solid rgba(27, 31, 35, 0.2);
+  border-radius: 0.25em;
+
+  &:hover {
+    background-color: #e6ebf1;
+    background-image: linear-gradient(-180deg, #f0f3f6 0%, #e6ebf1 90%);
+  }
+
+  &:active {
+    background-color: #e9ecef;
+    background-image: none;
+    border-color: rgba(27, 31, 35, 0.35);
+    box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+  }
+
+  &.is-primary {
+    color: #fff;
+    border-color: #1a3d66;
+    background-color: #214d7f;
+    background-image: linear-gradient(#13549e 0, #164d8c 20%, #164d8c 80%, #214d7f 100%);
+
+    &:hover {
+      border-color: #214e82;
+      background-color: #275b96;
+      background-image: linear-gradient(#1660b5 0, #1a5aa3 20%, #1a5aa3 80%, #275b96 100%);
+    }
+
+    &:active {
+      background-color: #1d3f69;
+      background-image: none;
+      border-color: rgba(27, 31, 35, 0.35);
+      box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+    }
+  }
+
+  &.is-danger {
+    color: #fff;
+    border-color: #d64040;
+    background-color: #e54545;
+    background-image: linear-gradient(#f54e4e 0, #e54545 20%, #e54545 80%, #db4646 100%);
+
+    &:hover {
+      border-color: #f05252;
+      background-color: #e05d58;
+      background-image: linear-gradient(#e55353 0, #f05252 20%, #f05252 80%, #ff5e5e 100%);
+    }
+
+    &:active {
+      background-color: #e35f5a;
+      background-image: none;
+      border-color: rgba(27, 31, 35, 0.35);
+      box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+    }
+  }
+
+  &.is-disabled,
+  &[disabled="disabled"],
+  &[disabled] {
+    color: #ccc;
+    border-color: #eee;
+    background-color: #eee;
+    background-image: none;
+    cursor: default;
+    pointer-events: none;
+  }
+}
