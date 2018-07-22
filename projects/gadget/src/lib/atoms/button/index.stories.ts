@@ -17,7 +17,7 @@ storiesOf('Atoms/Button', module)
       component: ButtonComponent,
       props: {
         innerLabel: 'Clickable Button',
-        onClick: action('Clicked!'),
+        clickButton: action('Clicked!'),
       },
     })),
   );
