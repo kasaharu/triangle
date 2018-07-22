@@ -12,6 +12,17 @@ jobs:
       - run: echo "Start build for gadget"
       - run: yarn install
       - run: yarn build-lib
+  build-storybook:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for Storybook"
+      - run: yarn install
+      - run: yarn build-lib
+      - run: yarn build-storybook
+      - store_artifacts:
+          path: storybook-static
   build-app:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
@@ -169,6 +180,9 @@ workflows:
           requires:
             - build-lib
       - build-cnt:
+          requires:
+            - build-lib
+      - build-storybook:
           requires:
             - build-lib
       - lint:
