@@ -63,4 +63,15 @@
       box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
     }
   }
+
+  &.is-disabled,
+  &[disabled="disabled"],
+  &[disabled] {
+    color: #ccc;
+    border-color: #eee;
+    background-color: #eee;
+    background-image: none;
+    cursor: default;
+    pointer-events: none;
+  }
 }
