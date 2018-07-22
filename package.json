@@ -22,7 +22,9 @@
     "e2e-gh": "ng e2e gh-render-e2e",
     "e2e-tm": "ng e2e todo-manager-e2e",
     "e2e-cnt": "ng e2e counter-e2e",
-    "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'"
+    "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -69,6 +71,11 @@
     "tsickle": "0.32.0",
     "tslib": "1.9.3",
     "tslint": "5.11.0",
-    "typescript": "2.9.2"
+    "typescript": "2.9.2",
+    "@storybook/angular": "^4.0.0-alpha.14",
+    "@storybook/addon-notes": "^4.0.0-alpha.14",
+    "@storybook/addon-actions": "^4.0.0-alpha.14",
+    "@storybook/addon-links": "^4.0.0-alpha.14",
+    "@storybook/addons": "^4.0.0-alpha.14"
   }
 }
