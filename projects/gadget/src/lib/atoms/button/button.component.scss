@@ -23,4 +23,24 @@
     border-color: rgba(27, 31, 35, 0.35);
     box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
   }
+
+  &.is-primary {
+    color: #fff;
+    border-color: #1a3d66;
+    background-color: #214d7f;
+    background-image: linear-gradient(#13549e 0, #164d8c 20%, #164d8c 80%, #214d7f 100%);
+
+    &:hover {
+      border-color: #214e82;
+      background-color: #275b96;
+      background-image: linear-gradient(#1660b5 0, #1a5aa3 20%, #1a5aa3 80%, #275b96 100%);
+    }
+
+    &:active {
+      background-color: #1d3f69;
+      background-image: none;
+      border-color: rgba(27, 31, 35, 0.35);
+      box-shadow: inset 0 0.15em 0.3em rgba(27, 31, 35, 0.15);
+    }
+  }
 }
