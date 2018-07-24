@@ -4,13 +4,28 @@
 #
 version: 2
 jobs:
+  install-packages:
+    docker:
+      - image: circleci/node:8.11.3-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start installing the packages"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn install
+      - save_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules/
+
   build-lib:
     docker:
       - image: circleci/node:8.11.3-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for gadget"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
   build-storybook:
     docker:
@@ -18,7 +33,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start build for Storybook"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn build-storybook
       - store_artifacts:
@@ -29,7 +45,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start build for triangle"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn build-app
   build-gh:
@@ -38,7 +55,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start build for gh-render"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn build-gh
   build-tm:
@@ -47,7 +65,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start build for todo-manager"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn build-tm
   build-cnt:
@@ -56,7 +75,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start build for counter"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn build-cnt
   lint:
@@ -65,7 +85,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start lint"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn lint
   stylelint:
     docker:
@@ -73,7 +94,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start stylelint"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn stylelint
   test-lib:
     docker:
@@ -81,7 +103,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start test for gadget"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn test-lib --watch=false --code-coverage
       - store_artifacts:
           path: coverage
@@ -91,7 +114,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start test for triangle"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn test-app --watch=false --code-coverage
       - store_artifacts:
@@ -102,7 +126,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start test for gh-render"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn test-gh --watch=false --code-coverage
       - store_artifacts:
@@ -113,7 +138,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start test for todo-manager"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn test-tm --watch=false --code-coverage
       - store_artifacts:
@@ -124,7 +150,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start test for counter"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn test-cnt --watch=false --code-coverage
       - store_artifacts:
@@ -135,7 +162,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start e2e-app"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn e2e-app
   e2e-gh:
@@ -144,7 +172,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start e2e-gh"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn e2e-gh
   e2e-tm:
@@ -153,7 +182,8 @@ jobs:
     steps:
       - checkout
       - run: echo "Start e2e-tm"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn e2e-tm
   e2e-cnt:
@@ -162,14 +192,18 @@ jobs:
     steps:
       - checkout
       - run: echo "Start e2e-cnt"
-      - run: yarn install
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
       - run: yarn e2e-cnt
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build-lib
+      - install-packages
+      - build-lib:
+          requires:
+            - install-packages
       - build-app:
           requires:
             - build-lib
