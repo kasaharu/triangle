@@ -105,7 +105,7 @@ jobs:
       - run: echo "Start test for gadget"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn test-lib --watch=false --code-coverage
+      - run: yarn test-lib:1
       - store_artifacts:
           path: coverage
   test-app:
@@ -117,7 +117,7 @@ jobs:
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
-      - run: yarn test-app --watch=false --code-coverage
+      - run: yarn test-app:1
       - store_artifacts:
           path: coverage
   test-gh:
@@ -129,7 +129,7 @@ jobs:
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
-      - run: yarn test-gh --watch=false --code-coverage
+      - run: yarn test-gh:1
       - store_artifacts:
           path: coverage
   test-tm:
@@ -141,7 +141,7 @@ jobs:
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
-      - run: yarn test-tm --watch=false --code-coverage
+      - run: yarn test-tm:1
       - store_artifacts:
           path: coverage
   test-cnt:
@@ -153,7 +153,7 @@ jobs:
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn build-lib
-      - run: yarn test-cnt --watch=false --code-coverage
+      - run: yarn test-cnt:1
       - store_artifacts:
           path: coverage
   e2e-app:
