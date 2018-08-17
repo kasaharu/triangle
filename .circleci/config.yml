@@ -6,7 +6,7 @@ version: 2
 jobs:
   install-packages:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start installing the packages"
@@ -20,7 +20,7 @@ jobs:
 
   build-lib:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for gadget"
@@ -29,7 +29,7 @@ jobs:
       - run: yarn build-lib
   build-storybook:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for Storybook"
@@ -41,7 +41,7 @@ jobs:
           path: storybook-static
   build-app:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for triangle"
@@ -51,7 +51,7 @@ jobs:
       - run: yarn build-app
   build-gh:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for gh-render"
@@ -61,7 +61,7 @@ jobs:
       - run: yarn build-gh
   build-tm:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for todo-manager"
@@ -71,7 +71,7 @@ jobs:
       - run: yarn build-tm
   build-cnt:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for counter"
@@ -81,7 +81,7 @@ jobs:
       - run: yarn build-cnt
   lint:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start lint"
@@ -90,7 +90,7 @@ jobs:
       - run: yarn lint
   stylelint:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start stylelint"
@@ -99,7 +99,7 @@ jobs:
       - run: yarn stylelint
   test-lib:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for gadget"
@@ -110,7 +110,7 @@ jobs:
           path: coverage
   test-app:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for triangle"
@@ -122,7 +122,7 @@ jobs:
           path: coverage
   test-gh:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for gh-render"
@@ -134,7 +134,7 @@ jobs:
           path: coverage
   test-tm:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for todo-manager"
@@ -146,7 +146,7 @@ jobs:
           path: coverage
   test-cnt:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for counter"
@@ -158,7 +158,7 @@ jobs:
           path: coverage
   e2e-app:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-app"
@@ -168,7 +168,7 @@ jobs:
       - run: yarn e2e-app
   e2e-gh:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-gh"
@@ -178,7 +178,7 @@ jobs:
       - run: yarn e2e-gh
   e2e-tm:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-tm"
@@ -188,7 +188,7 @@ jobs:
       - run: yarn e2e-tm
   e2e-cnt:
     docker:
-      - image: circleci/node:8.11.3-stretch-browsers
+      - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-cnt"
