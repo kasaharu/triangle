@@ -539,6 +539,129 @@
           }
         }
       }
+    },
+    "anything": {
+      "root": "projects/anything/",
+      "sourceRoot": "projects/anything/src",
+      "projectType": "application",
+      "prefix": "anytn",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/anything",
+            "index": "projects/anything/src/index.html",
+            "main": "projects/anything/src/main.ts",
+            "polyfills": "projects/anything/src/polyfills.ts",
+            "tsConfig": "projects/anything/tsconfig.app.json",
+            "assets": [
+              "projects/anything/src/favicon.ico",
+              "projects/anything/src/assets"
+            ],
+            "styles": [
+              "projects/anything/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/anything/src/environments/environment.ts",
+                  "with": "projects/anything/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "anything:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "anything:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "anything:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/anything/src/test.ts",
+            "polyfills": "projects/anything/src/polyfills.ts",
+            "tsConfig": "projects/anything/tsconfig.spec.json",
+            "karmaConfig": "projects/anything/karma.conf.js",
+            "styles": [
+              "projects/anything/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/anything/src/favicon.ico",
+              "projects/anything/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/anything/tsconfig.app.json",
+              "projects/anything/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "anything-e2e": {
+      "root": "projects/anything-e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/anything-e2e/protractor.conf.js",
+            "devServerTarget": "anything:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "anything:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/anything-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "triangle",
