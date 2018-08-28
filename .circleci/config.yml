@@ -79,6 +79,16 @@ jobs:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn lib:build
       - run: yarn cnt:build
+  build-anytn:
+    docker:
+      - image: circleci/node:8.11.4-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for anything"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn lib:build
+      - run: yarn anytn:build
   lint:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -156,6 +166,18 @@ jobs:
       - run: yarn cnt:test:1
       - store_artifacts:
           path: coverage
+  test-anytn:
+    docker:
+      - image: circleci/node:8.11.4-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for anything"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn lib:build
+      - run: yarn anytn:test:1
+      - store_artifacts:
+          path: coverage
   e2e-app:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -196,6 +218,16 @@ jobs:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn lib:build
       - run: yarn cnt:e2e
+  e2e-anytn:
+    docker:
+      - image: circleci/node:8.11.4-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start e2e-anytn"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn lib:build
+      - run: yarn anytn:e2e
 workflows:
   version: 2
   build_and_test:
@@ -214,6 +246,9 @@ workflows:
           requires:
             - build-lib
       - build-cnt:
+          requires:
+            - build-lib
+      - build-anytn:
           requires:
             - build-lib
       - build-storybook:
@@ -240,6 +275,9 @@ workflows:
       - test-cnt:
           requires:
             - build-cnt
+      - test-anytn:
+          requires:
+            - build-anytn
       - e2e-app:
           requires:
             - build-app
@@ -252,3 +290,6 @@ workflows:
       - e2e-cnt:
           requires:
             - build-cnt
+      - e2e-anytn:
+          requires:
+            - build-anytn
