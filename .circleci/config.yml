@@ -26,7 +26,7 @@ jobs:
       - run: echo "Start build for gadget"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
+      - run: yarn lib:build
   build-storybook:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -35,7 +35,7 @@ jobs:
       - run: echo "Start build for Storybook"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
+      - run: yarn lib:build
       - run: yarn build-storybook
       - store_artifacts:
           path: storybook-static
@@ -47,7 +47,7 @@ jobs:
       - run: echo "Start build for triangle"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
+      - run: yarn lib:build
       - run: yarn build-app
   build-gh:
     docker:
@@ -57,8 +57,8 @@ jobs:
       - run: echo "Start build for gh-render"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn build-gh
+      - run: yarn lib:build
+      - run: yarn gh:build
   build-tm:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -67,8 +67,8 @@ jobs:
       - run: echo "Start build for todo-manager"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn build-tm
+      - run: yarn lib:build
+      - run: yarn tm:build
   build-cnt:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -77,8 +77,8 @@ jobs:
       - run: echo "Start build for counter"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn build-cnt
+      - run: yarn lib:build
+      - run: yarn cnt:build
   lint:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -105,7 +105,7 @@ jobs:
       - run: echo "Start test for gadget"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn test-lib:1
+      - run: yarn lib:test:1
       - store_artifacts:
           path: coverage
   test-app:
@@ -116,7 +116,7 @@ jobs:
       - run: echo "Start test for triangle"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
+      - run: yarn lib:build
       - run: yarn test-app:1
       - store_artifacts:
           path: coverage
@@ -128,8 +128,8 @@ jobs:
       - run: echo "Start test for gh-render"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn test-gh:1
+      - run: yarn lib:build
+      - run: yarn gh:test:1
       - store_artifacts:
           path: coverage
   test-tm:
@@ -140,8 +140,8 @@ jobs:
       - run: echo "Start test for todo-manager"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn test-tm:1
+      - run: yarn lib:build
+      - run: yarn tm:test:1
       - store_artifacts:
           path: coverage
   test-cnt:
@@ -152,8 +152,8 @@ jobs:
       - run: echo "Start test for counter"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn test-cnt:1
+      - run: yarn lib:build
+      - run: yarn cnt:test:1
       - store_artifacts:
           path: coverage
   e2e-app:
@@ -164,7 +164,7 @@ jobs:
       - run: echo "Start e2e-app"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
+      - run: yarn lib:build
       - run: yarn e2e-app
   e2e-gh:
     docker:
@@ -174,18 +174,18 @@ jobs:
       - run: echo "Start e2e-gh"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn e2e-gh
+      - run: yarn lib:build
+      - run: yarn gh:e2e
   e2e-tm:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
     steps:
       - checkout
-      - run: echo "Start e2e-tm"
+      - run: echo "Start tm:e2e"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn e2e-tm
+      - run: yarn lib:build
+      - run: yarn tm:e2e
   e2e-cnt:
     docker:
       - image: circleci/node:8.11.4-stretch-browsers
@@ -194,8 +194,8 @@ jobs:
       - run: echo "Start e2e-cnt"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn build-lib
-      - run: yarn e2e-cnt
+      - run: yarn lib:build
+      - run: yarn cnt:e2e
 workflows:
   version: 2
   build_and_test:
