@@ -1,5 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { APP_BASE_HREF } from '@angular/common';
 import { GadgetModule } from 'gadget';
 import { AppComponent } from './app.component';
 describe('AppComponent', () => {
@@ -11,6 +12,9 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
+      ],
+      providers: [
+        { provide: APP_BASE_HREF, useValue : '/' },
       ],
     }).compileComponents();
   }));
