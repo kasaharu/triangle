@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { GadgetModule } from 'gadget';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Page1Component } from './components/page1/page1.component';
@@ -17,6 +19,7 @@ import { Page3Component } from './components/page3/page3.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    GadgetModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
