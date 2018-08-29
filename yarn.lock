@@ -714,9 +714,9 @@
   version "10.5.0"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.0.tgz#f5b61395c09b47ac46aaa1452750c9a72b3d3673"
 
-"@types/node@10.9.2":
-  version "10.9.2"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.2.tgz#f0ab8dced5cd6c56b26765e1c0d9e4fdcc9f2a00"
+"@types/node@10.9.3":
+  version "10.9.3"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.3.tgz#85f288502503ade0b3bfc049fe1777b05d0327d5"
 
 "@types/node@^6.0.46":
   version "6.0.113"
