@@ -7,6 +7,6 @@ import { LinkComponent } from './atoms/link/link.component';
   imports: [
   ],
   declarations: [GadgetComponent, ButtonComponent, LinkComponent],
-  exports: [GadgetComponent, ButtonComponent],
+  exports: [GadgetComponent, ButtonComponent, LinkComponent],
 })
 export class GadgetModule { }
