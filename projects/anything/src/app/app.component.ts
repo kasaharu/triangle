@@ -8,6 +8,7 @@ import { ActivatedRoute, ActivatedRouteSnapshot, Router, NavigationEnd } from '@
 })
 export class AppComponent implements OnInit {
   title = 'anything';
+  pageName: string;
 
   constructor(private route: ActivatedRoute, private router: Router) {}
 
@@ -15,8 +16,7 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
         const lastChildRoute = this.findLastChildRoute(this.route.snapshot);
-        const title = lastChildRoute.data['title'];
-        console.log(title);
+        this.pageName = lastChildRoute.data['title'];
       }
     });
   }
