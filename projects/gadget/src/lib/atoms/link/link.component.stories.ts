@@ -1,6 +1,4 @@
 import { storiesOf } from '@storybook/angular';
-import { withNotes } from '@storybook/addon-notes';
-import { action } from '@storybook/addon-actions';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { LinkComponent } from './link.component';
