@@ -2,18 +2,18 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.7.5.tgz#e2d856b671fe8b0615db1efc144a7f75b55fb6e1"
-  dependencies:
-    "@angular-devkit/core" "0.7.5"
-    rxjs "^6.0.0"
-
 "@angular-devkit/architect@0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.8.0.tgz#c18e7582b1d6e9646c6ad0186c9a9a443a986d98"
   dependencies:
     "@angular-devkit/core" "0.8.0"
+    rxjs "~6.2.0"
+
+"@angular-devkit/architect@0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.8.1.tgz#fe7e7c09f61dcd694be288076e6ee7e36fde37a7"
+  dependencies:
+    "@angular-devkit/core" "0.8.1"
     rxjs "~6.2.0"
 
 "@angular-devkit/build-angular@0.8.0":
@@ -71,13 +71,14 @@
   optionalDependencies:
     node-sass "^4.9.3"
 
-"@angular-devkit/build-ng-packagr@0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.7.5.tgz#68cb479606d185024a1908facf01668c91b0ce91"
+"@angular-devkit/build-ng-packagr@0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.8.1.tgz#08b7b088cf30fa5207f389ddcba6b437f09f07a4"
   dependencies:
-    "@angular-devkit/architect" "0.7.5"
-    "@angular-devkit/core" "0.7.5"
-    rxjs "^6.0.0"
+    "@angular-devkit/architect" "0.8.1"
+    "@angular-devkit/core" "0.8.1"
+    rxjs "~6.2.0"
+    semver "^5.3.0"
 
 "@angular-devkit/build-optimizer@0.8.0":
   version "0.8.0"
@@ -96,18 +97,18 @@
     "@angular-devkit/core" "0.8.0"
     rxjs "~6.2.0"
 
-"@angular-devkit/core@0.7.5":
-  version "0.7.5"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.7.5.tgz#49f7854ccadf3ddda8d0ea4359543a1cbdc6854d"
-  dependencies:
-    ajv "~6.4.0"
-    chokidar "^2.0.3"
-    rxjs "^6.0.0"
-    source-map "^0.5.6"
-
 "@angular-devkit/core@0.8.0":
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.8.0.tgz#d31c26677f7d5302e279946823933bbc95049e56"
+  dependencies:
+    ajv "~6.4.0"
+    chokidar "^2.0.3"
+    rxjs "~6.2.0"
+    source-map "^0.5.6"
+
+"@angular-devkit/core@0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.8.1.tgz#b664d9965894a471686d74f92c55128ab74b8c09"
   dependencies:
     ajv "~6.4.0"
     chokidar "^2.0.3"
