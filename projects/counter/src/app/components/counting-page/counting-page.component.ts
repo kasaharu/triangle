@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { CounterState } from '../../models/counter-state';
+import { State } from '../../core/state';
 import * as CounterActions from '../../store/counter/counter.actions';
 
 @Component({
@@ -13,8 +13,8 @@ import * as CounterActions from '../../store/counter/counter.actions';
 export class CountingPageComponent implements OnInit {
   count$: Observable<number>;
 
-  constructor(private store: Store<CounterState>) {
-    this.count$ = store.pipe(select('count'));
+  constructor(private store: Store<State>) {
+    this.count$ = store.pipe(select('counter'));
   }
 
   ngOnInit() {

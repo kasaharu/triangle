@@ -17,7 +17,7 @@ import { CountingPageComponent } from './components/counting-page/counting-page.
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ count: counterReducer }),
+    StoreModule.forRoot({ counter: counterReducer }),
     EffectsModule.forRoot([CounterEffects]),
   ],
   providers: [],
