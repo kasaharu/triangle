@@ -1,11 +1,11 @@
 import { CounterActionTypes, CounterActionsUnion } from './counter.actions';
 import { State } from '../../core/state';
 
-const initialState = {
+const initialState: State = {
   counter: {
-    count: 0,
+    value: 0,
   },
-}
+};
 
 export function counterReducer(state: State = initialState, action: CounterActionsUnion) {
   switch (action.type) {
@@ -14,11 +14,11 @@ export function counterReducer(state: State = initialState, action: CounterActio
     case CounterActionTypes.RESTORE_SUCCESS:
       return action.payload;
     case CounterActionTypes.INCREMENT:
-      return state + 1;
+      return { counter: { value: state.counter.value + 1 } };
     case CounterActionTypes.DECREMENT:
-      return state - 1;
+      return { counter: { value: state.counter.value - 1 } };
     case CounterActionTypes.RESET:
-      return 0;
+      return { counter: { value: 0 } };
     case CounterActionTypes.SAVE:
       return state;
     case CounterActionTypes.SAVE_SUCCESS:
@@ -27,3 +27,5 @@ export function counterReducer(state: State = initialState, action: CounterActio
       return state;
   }
 }
+
+export const getCounter = (state: State) => state.counter.value;

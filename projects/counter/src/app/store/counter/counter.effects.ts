@@ -16,7 +16,7 @@ export class CounterEffects {
     ofType(CounterActions.CounterActionTypes.RESTORE),
     mergeMap(_ =>
       of(+localStorage.getItem('triangle-counter-count')).pipe(
-        map(data => new CounterActions.RestoreSuccess(data)),
+        map(data => new CounterActions.RestoreSuccess({ counter: { value: data } })),
       ),
     ),
   );
@@ -25,7 +25,9 @@ export class CounterEffects {
   save$: Observable<Action> = this.actions$.pipe(
     ofType(CounterActions.CounterActionTypes.SAVE),
     withLatestFrom(this.store),
-    tap(([action, state]) => localStorage.setItem('triangle-counter-count', state.counter.toString())),
+    tap(([action, state]) => {
+      localStorage.setItem('triangle-counter-count', state.counter.value.toString());
+      }),
     map(data => new CounterActions.SaveSuccess()),
   );
 }

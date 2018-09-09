@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 
 import { State } from '../../core/state';
 import * as CounterActions from '../../store/counter/counter.actions';
+import { getCounter } from '../../store/counter/counter.selectors';
 
 @Component({
   selector: 'cnt-counting-page',
@@ -14,7 +15,7 @@ export class CountingPageComponent implements OnInit {
   count$: Observable<number>;
 
   constructor(private store: Store<State>) {
-    this.count$ = store.pipe(select('counter'));
+    this.count$ = store.pipe(select(getCounter));
   }
 
   ngOnInit() {
@@ -34,7 +35,7 @@ export class CountingPageComponent implements OnInit {
   }
 
   reset() {
-    this.store.dispatch(new CounterActions.Reset(0));
+    this.store.dispatch(new CounterActions.Reset({ counter: { value: 0 } }));
   }
 
   save() {
