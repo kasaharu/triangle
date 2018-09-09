@@ -1,8 +1,13 @@
 import { CounterActionTypes, CounterActionsUnion } from './counter.actions';
+import { State } from '../../core/state';
 
-const initialState = 0;
+const initialState = {
+  counter: {
+    count: 0,
+  },
+}
 
-export function counterReducer(state: number = initialState, action: CounterActionsUnion) {
+export function counterReducer(state: State = initialState, action: CounterActionsUnion) {
   switch (action.type) {
     case CounterActionTypes.RESTORE:
       return state;
