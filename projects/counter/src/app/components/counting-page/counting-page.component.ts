@@ -3,8 +3,8 @@ import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
 import { State } from '../../core/state';
-import * as CounterActions from '../../store/counter/counter.actions';
-import { getCounter } from '../../store/counter/counter.selectors';
+import * as CounterActions from '../../root-store/counter/counter.actions';
+import { getCounter } from '../../root-store/counter/counter.selectors';
 
 @Component({
   selector: 'cnt-counting-page',
