@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { CounterState } from '../../models/counter-state';
-import * as CounterActions from '../../store/counter/counter.actions';
+import { State } from '../../core/state';
+import * as CounterActions from '../../root-store/counter/counter.actions';
+import { getCounter } from '../../root-store/counter/counter.selectors';
 
 @Component({
   selector: 'cnt-counting-page',
@@ -13,8 +14,8 @@ import * as CounterActions from '../../store/counter/counter.actions';
 export class CountingPageComponent implements OnInit {
   count$: Observable<number>;
 
-  constructor(private store: Store<CounterState>) {
-    this.count$ = store.pipe(select('count'));
+  constructor(private store: Store<State>) {
+    this.count$ = store.pipe(select(getCounter));
   }
 
   ngOnInit() {
@@ -34,7 +35,7 @@ export class CountingPageComponent implements OnInit {
   }
 
   reset() {
-    this.store.dispatch(new CounterActions.Reset(0));
+    this.store.dispatch(new CounterActions.Reset({ counter: { value: 0 } }));
   }
 
   save() {

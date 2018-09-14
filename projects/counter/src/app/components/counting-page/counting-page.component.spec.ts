@@ -1,16 +1,16 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule, Store } from '@ngrx/store';
 
-import { counterReducer } from '../../store/counter/counter.reducers';
-import * as CounterActions from '../../store/counter/counter.actions';
+import { counterReducer } from '../../root-store/counter/counter.reducers';
+import * as CounterActions from '../../root-store/counter/counter.actions';
 
-import { CounterState } from '../../models/counter-state';
+import { State } from '../../core/state';
 import { CountingPageComponent } from './counting-page.component';
 
 describe('CountingPageComponent', () => {
   let component: CountingPageComponent;
   let fixture: ComponentFixture<CountingPageComponent>;
-  let store: Store<CounterState>;
+  let store: Store<State>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({

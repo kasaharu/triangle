@@ -1,5 +1,7 @@
 import { Action } from '@ngrx/store';
 
+import { Counter } from '../../core/model';
+
 export enum CounterActionTypes {
   RESTORE = 'RESTORE',
   RESTORE_SUCCESS = 'RESTORE_SUCCESS',
@@ -16,7 +18,7 @@ export class Restore implements Action {
 
 export class RestoreSuccess implements Action {
   readonly type = CounterActionTypes.RESTORE_SUCCESS;
-  constructor(public payload: number) {}
+  constructor(public payload: { counter: Counter }) {}
 }
 
 export class Increment implements Action {
@@ -29,7 +31,7 @@ export class Decrement implements Action {
 
 export class Reset implements Action {
   readonly type = CounterActionTypes.RESET;
-  constructor(public payload: number) {}
+  constructor(public payload: { counter: Counter }) {}
 }
 
 export class Save implements Action {
