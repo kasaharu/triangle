@@ -4,12 +4,12 @@ import { Action, Store } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 import { mergeMap, map, tap, withLatestFrom } from 'rxjs/operators';
 
-import * as CounterActions from './counter.actions';
-import { CounterState } from '../../models/counter-state';
+import * as CounterActions from './actions';
+import { State } from './state';
 
 @Injectable()
 export class CounterEffects {
-  constructor(private actions$: Actions, private store: Store<CounterState>) {}
+  constructor(private actions$: Actions, private store: Store<State>) {}
 
   @Effect()
   restore$: Observable<Action> = this.actions$.pipe(
