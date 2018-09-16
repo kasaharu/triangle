@@ -5,7 +5,6 @@ import { StoreModule } from '@ngrx/store';
 import { CounterEffects } from './effects';
 import { counterReducer } from './reducer';
 
-
 @NgModule({
   imports: [
     CommonModule,
