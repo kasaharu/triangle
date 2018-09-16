@@ -15,11 +15,11 @@ export class CountingPageComponent implements OnInit {
   counter$: any;
 
   constructor(private store: Store<RootStoreState.State>) {
-    this.counter$ = store.pipe(select(CounterStoreSelectors.selectCounterState));
   }
 
   ngOnInit() {
-    // this.restore();
+    this.counter$ = this.store.pipe(select(CounterStoreSelectors.selectCounterState));
+    this.restore();
   }
 
   restore() {
