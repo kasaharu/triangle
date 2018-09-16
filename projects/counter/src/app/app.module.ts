@@ -4,8 +4,7 @@ import { NgModule } from '@angular/core';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 
-import { counterReducer } from './store/counter/counter.reducers';
-import { CounterEffects } from './store/counter/counter.effects';
+import { RootStoreModule } from './root-store';
 
 import { AppComponent } from './app.component';
 import { CountingPageComponent } from './components/counting-page/counting-page.component';
@@ -17,8 +16,7 @@ import { CountingPageComponent } from './components/counting-page/counting-page.
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot({ count: counterReducer }),
-    EffectsModule.forRoot([CounterEffects]),
+    RootStoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
