@@ -2,8 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { Counter } from '../../core/models';
-import { RootStoreState, CounterStoreActions, CounterStoreSelectors } from '../../root-store';
+import {
+  RootStoreState,
+  CounterStoreActions,
+  CounterStoreSelectors,
+  CounterStoreState,
+} from '../../root-store';
 
 @Component({
   selector: 'cnt-counting-page',
@@ -11,8 +15,7 @@ import { RootStoreState, CounterStoreActions, CounterStoreSelectors } from '../.
   styleUrls: ['./counting-page.component.scss'],
 })
 export class CountingPageComponent implements OnInit {
-  // counter$: Observable<Counter>;
-  counter$: any;
+  counter$: Observable<CounterStoreState.State>;
 
   constructor(private store: Store<RootStoreState.State>) {
   }
