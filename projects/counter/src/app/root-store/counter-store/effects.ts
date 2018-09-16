@@ -25,7 +25,7 @@ export class CounterEffects {
   save$: Observable<Action> = this.actions$.pipe(
     ofType(CounterActions.CounterActionTypes.SAVE),
     withLatestFrom(this.store),
-    tap(([action, state]) => localStorage.setItem('triangle-counter-count', state.count.toString())),
+    tap(([action, state]) => localStorage.setItem('triangle-counter-count', state.counter.value.toString())),
     map(data => new CounterActions.SaveSuccess()),
   );
 }

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { CounterState } from '../../models/counter-state';
-import * as CounterActions from '../../store/counter/counter.actions';
+import { Counter } from '../../core/models';
+import { RootStoreState, CounterStoreActions, CounterStoreSelectors } from '../../root-store';
 
 @Component({
   selector: 'cnt-counting-page',
@@ -11,33 +11,34 @@ import * as CounterActions from '../../store/counter/counter.actions';
   styleUrls: ['./counting-page.component.scss'],
 })
 export class CountingPageComponent implements OnInit {
-  count$: Observable<number>;
+  // counter$: Observable<Counter>;
+  counter$: any;
 
-  constructor(private store: Store<CounterState>) {
-    this.count$ = store.pipe(select('count'));
+  constructor(private store: Store<RootStoreState.State>) {
+    this.counter$ = store.pipe(select(CounterStoreSelectors.selectCounterState));
   }
 
   ngOnInit() {
-    this.restore();
+    // this.restore();
   }
 
   restore() {
-    this.store.dispatch(new CounterActions.Restore());
+    this.store.dispatch(new CounterStoreActions.Restore());
   }
 
   increment() {
-    this.store.dispatch(new CounterActions.Increment());
+    this.store.dispatch(new CounterStoreActions.Increment());
   }
 
   decrement() {
-    this.store.dispatch(new CounterActions.Decrement());
+    this.store.dispatch(new CounterStoreActions.Decrement());
   }
 
   reset() {
-    this.store.dispatch(new CounterActions.Reset(0));
+    this.store.dispatch(new CounterStoreActions.Reset(0));
   }
 
   save() {
-    this.store.dispatch(new CounterActions.Save());
+    this.store.dispatch(new CounterStoreActions.Save());
   }
 }

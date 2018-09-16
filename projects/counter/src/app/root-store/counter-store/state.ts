@@ -4,6 +4,6 @@ export interface State {
   counter: Counter;
 }
 
-export const initialState: State {
+export const initialState: State = {
   counter: { value: 0 },
 };

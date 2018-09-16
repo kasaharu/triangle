@@ -8,11 +8,11 @@ export function counterReducer(state: State = initialState, action: CounterActio
     case CounterActionTypes.RESTORE_SUCCESS:
       return action.payload;
     case CounterActionTypes.INCREMENT:
-      return state + 1;
+      return { counter: { value: state.counter.value + 1 } };
     case CounterActionTypes.DECREMENT:
-      return state - 1;
+      return { counter: { value: state.counter.value - 1 } };
     case CounterActionTypes.RESET:
-      return 0;
+      return initialState;
     case CounterActionTypes.SAVE:
       return state;
     case CounterActionTypes.SAVE_SUCCESS:

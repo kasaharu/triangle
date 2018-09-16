@@ -1,4 +1,4 @@
-<div>Current Count: {{ count$ | async }}</div>
+<div>Current Count: {{ (counter$ | async)?.counter?.value}}</div>
 
 <button (click)="increment()">Increment</button>
 <button (click)="decrement()">Decrement</button>
