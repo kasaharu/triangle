@@ -1,8 +1,7 @@
-import { CounterActionTypes, CounterActionsUnion } from './counter.actions';
+import { CounterActionTypes, CounterActionsUnion } from './actions';
+import { initialState, State } from './state';
 
-const initialState = 0;
-
-export function counterReducer(state: number = initialState, action: CounterActionsUnion) {
+export function counterReducer(state: State = initialState, action: CounterActionsUnion) {
   switch (action.type) {
     case CounterActionTypes.RESTORE:
       return state;
