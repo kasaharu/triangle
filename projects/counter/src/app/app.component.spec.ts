@@ -1,7 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
-import { StoreModule } from '@ngrx/store';
 
-import { counterReducer } from './store/counter/counter.reducers';
+import { RootStoreModule } from './root-store';
 
 import { AppComponent } from './app.component';
 import { CountingPageComponent } from './components/counting-page/counting-page.component';
@@ -12,9 +11,7 @@ describe('AppComponent', () => {
         AppComponent,
         CountingPageComponent,
       ],
-      imports: [
-        StoreModule.forRoot({ count: counterReducer }),
-      ],
+      imports: [RootStoreModule],
     }).compileComponents();
   }));
   it('should create the app', async(() => {
