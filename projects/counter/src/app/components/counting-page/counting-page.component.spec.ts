@@ -1,22 +1,17 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { StoreModule, Store } from '@ngrx/store';
+import { Store } from '@ngrx/store';
 
-import { counterReducer } from '../../store/counter/counter.reducers';
-import * as CounterActions from '../../store/counter/counter.actions';
-
-import { CounterState } from '../../models/counter-state';
+import { RootStoreModule, RootStoreState, CounterStoreActions } from '../../root-store';
 import { CountingPageComponent } from './counting-page.component';
 
 describe('CountingPageComponent', () => {
   let component: CountingPageComponent;
   let fixture: ComponentFixture<CountingPageComponent>;
-  let store: Store<CounterState>;
+  let store: Store<RootStoreState.State>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        StoreModule.forRoot({ count: counterReducer }),
-      ],
+      imports: [RootStoreModule],
       declarations: [ CountingPageComponent ],
     })
     .compileComponents();
@@ -36,7 +31,7 @@ describe('CountingPageComponent', () => {
   });
 
   it('should dispatch the action to Increment()', () => {
-    const action = new CounterActions.Increment();
+    const action = new CounterStoreActions.Increment();
 
     component.increment();
 
@@ -44,7 +39,7 @@ describe('CountingPageComponent', () => {
   });
 
   it('should dispatch the action to Decrement()', () => {
-    const action = new CounterActions.Decrement();
+    const action = new CounterStoreActions.Decrement();
 
     component.decrement();
 
@@ -52,7 +47,7 @@ describe('CountingPageComponent', () => {
   });
 
   it('should dispatch the action to Reset()', () => {
-    const action = new CounterActions.Reset(0);
+    const action = new CounterStoreActions.Reset(0);
 
     component.reset();
 
@@ -60,7 +55,7 @@ describe('CountingPageComponent', () => {
   });
 
   it('should dispatch the action to Save()', () => {
-    const action = new CounterActions.Save();
+    const action = new CounterStoreActions.Save();
 
     component.save();
 
