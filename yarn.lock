@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.8.3.tgz#320c7de2e2e7b984a0e4be51dc60dfe12d4c973e"
-  integrity sha512-cFku50grgEJPg1CZZ0DXt4CkA6WnV6zN3hCXzpWbOfc/Id923Mml/jsEaoByeXHsRqb5rIZKZAhz7R509ya8OQ==
-  dependencies:
-    "@angular-devkit/core" "0.8.3"
-    rxjs "~6.2.0"
-
 "@angular-devkit/architect@0.8.4":
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.8.4.tgz#095b382908d7dfaa2f64edfe93555dfac42957aa"
@@ -74,13 +66,13 @@
   optionalDependencies:
     node-sass "^4.9.3"
 
-"@angular-devkit/build-ng-packagr@0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.8.3.tgz#c50c7689ed8b3b592033e1763c01e05b4ce3a2f1"
-  integrity sha512-yAC6CaEbeN2FEdOjvZvk9ZaMDPdSFWhmQ4XfOyFv2GZ6ZiOe1KVUcvSB/9JUQlnFIeAfuG1LPYYvHqrdEeKaig==
+"@angular-devkit/build-ng-packagr@0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.8.4.tgz#3a5c636bfcb51f7854178e0b34373cf5925ed61a"
+  integrity sha512-N1h7eq/knsb61C0cb6T8LID+Ak/RT7p7K/DcUKv9hrg26BNe2cHR/JuMGCvF120MVzK7nhEj99qyyaYMWb3g9g==
   dependencies:
-    "@angular-devkit/architect" "0.8.3"
-    "@angular-devkit/core" "0.8.3"
+    "@angular-devkit/architect" "0.8.4"
+    "@angular-devkit/core" "0.8.4"
     rxjs "~6.2.0"
     semver "^5.3.0"
 
@@ -102,16 +94,6 @@
     "@angular-devkit/architect" "0.8.4"
     "@angular-devkit/core" "0.8.4"
     rxjs "~6.2.0"
-
-"@angular-devkit/core@0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-0.8.3.tgz#a7158195dc90997de62ec0b12af3325870182c3b"
-  integrity sha512-2KHt5osMs3zACYXev20ZU5SXdWoinoKwZkj2caj2LCj9W7QNHmsz34QvaygNq7YdJzF3jkXkdy0GSUgUgDke0w==
-  dependencies:
-    ajv "~6.4.0"
-    chokidar "^2.0.3"
-    rxjs "~6.2.0"
-    source-map "^0.5.6"
 
 "@angular-devkit/core@0.8.4":
   version "0.8.4"
