@@ -7551,10 +7551,10 @@ next-tick@1:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-ng-packagr@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-4.3.0.tgz#240471cb82889b8a677a3965c98c7018135ce34d"
-  integrity sha512-hJsZsIgl+1abztxFjaGCRotQAHbqX9gjKit821GX1D1aQr7Is0DmUEjNR2n9IhrhE9lzb0p+SbAjlG+euy0eRQ==
+ng-packagr@4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/ng-packagr/-/ng-packagr-4.3.1.tgz#f25237d9472841e23d7c0386cb488fecdc2129af"
+  integrity sha512-OQLrGBnkUH1BDM0KV1Z9X8XPqwHqPdlY824irf6G+yFMfRwB9CO45OfMgJBeXdX3fnBb9CjOfQte1JvNMnHA7A==
   dependencies:
     "@ngtools/json-schema" "^1.1.0"
     autoprefixer "^9.0.0"
