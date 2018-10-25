@@ -2,14 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.10.2.tgz#1d19f305f717cd55d8560ea731cfc336edff0978"
-  integrity sha512-jMok3FvXpj1zfI7tPmrMYe9yyBP2qivaBGxJqKa0H5SdwJFdudD+KwQOwamBdqz68WfEfzwvS2YCqE67thak7g==
-  dependencies:
-    "@angular-devkit/core" "7.0.2"
-    rxjs "6.3.3"
-
 "@angular-devkit/architect@0.10.3":
   version "0.10.3"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.10.3.tgz#6e4fd76ca41fbb3e5dc2a29f662ba3ee4d1ad086"
@@ -72,13 +64,13 @@
   optionalDependencies:
     node-sass "4.9.3"
 
-"@angular-devkit/build-ng-packagr@0.10.2":
-  version "0.10.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.10.2.tgz#e4936c09f4673e085b89b05cb44b3b8d246ba0fd"
-  integrity sha512-JS+h60gkP3a+z5fWg36wA19inSHZuBtuO3H2K4i722jlcymZp8EcYDR8CsWOAX0DeP1LtCjSWqEnvvZvXhsrag==
+"@angular-devkit/build-ng-packagr@0.10.3":
+  version "0.10.3"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.10.3.tgz#246a7e7ae6e50d9deb561a75501d44cb0587bf3f"
+  integrity sha512-6KhavrMdUqplfpuI1kqoMnfOENXclEbFWIQ1Q0gi3Sz8HbyF8Ma7JXEHXlGzn6GvVqajtAjJUq5SLe1o45NSqg==
   dependencies:
-    "@angular-devkit/architect" "0.10.2"
-    "@angular-devkit/core" "7.0.2"
+    "@angular-devkit/architect" "0.10.3"
+    "@angular-devkit/core" "7.0.3"
     rxjs "6.3.3"
     semver "5.5.1"
 
@@ -100,17 +92,6 @@
     "@angular-devkit/architect" "0.10.3"
     "@angular-devkit/core" "7.0.3"
     rxjs "6.3.3"
-
-"@angular-devkit/core@7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.0.2.tgz#69f1ffc1f8731f916d3cc36ee42cf5a2de3aee45"
-  integrity sha512-liVqobArUfTvf0cZcjr3VI5tnHR+QjzfvC4HFBwIArls6/RxIATqd9GE9mFMWpy17xgVq8N7WmD6bymv1trbfA==
-  dependencies:
-    ajv "6.5.3"
-    chokidar "2.0.4"
-    fast-json-stable-stringify "2.0.0"
-    rxjs "6.3.3"
-    source-map "0.7.3"
 
 "@angular-devkit/core@7.0.3":
   version "7.0.3"
