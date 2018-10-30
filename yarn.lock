@@ -959,21 +959,21 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@ngrx/effects@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-6.1.0.tgz#3c1e1ab1e5a86c6d9c29d4f3771e42cc9bd8576c"
+"@ngrx/effects@6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-6.1.1.tgz#547b30c5508bb7cb3b18f6b10c16f0cd99c6a429"
 
-"@ngrx/entity@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-6.1.0.tgz#9ea34beef25e458b45638095875b2548d484df9f"
+"@ngrx/entity@6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-6.1.1.tgz#08407d32ee288fa764e8c3d61b254de6427284af"
 
-"@ngrx/store-devtools@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-6.1.0.tgz#cf65a3149628dc37badd094204484dde9ba14200"
+"@ngrx/store-devtools@6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-6.1.1.tgz#43894dda299f13a86c56f99e5076ba617513b2d5"
 
-"@ngrx/store@6.1.0":
-  version "6.1.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.0.tgz#5b027647a797bf027912568214b10375dd75af38"
+"@ngrx/store@6.1.1":
+  version "6.1.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-6.1.1.tgz#35a3d87f545df4d6a544087f5fa45e143f0a0e90"
 
 "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
