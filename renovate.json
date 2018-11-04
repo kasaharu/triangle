@@ -6,6 +6,11 @@
   "assignees": ["kasaharu"],
   "reviewers": ["kasaharu"],
   "patch": { "automerge": true },
-  "devDependencies": { "automerge": true },
+  "devDependencies": {
+    "automerge": true,
+    "major": {
+      "automerge": false
+    }
+  },
   "schedule": ["after 10pm and before 5am on every weekday", "every weekend"]
 }
