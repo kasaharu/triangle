@@ -61,7 +61,7 @@
     "@angular/cli": "7.0.4",
     "@angular/compiler-cli": "7.0.2",
     "@angular/language-service": "7.0.2",
-    "@storybook/cli": "4.0.2",
+    "@storybook/cli": "4.0.4",
     "@types/jasmine": "2.8.11",
     "@types/jasminewd2": "2.0.5",
     "@types/node": "10.12.2",
@@ -82,10 +82,10 @@
     "tslib": "1.9.3",
     "tslint": "5.11.0",
     "typescript": "3.1.6",
-    "@storybook/angular": "4.0.2",
-    "@storybook/addon-notes": "4.0.2",
-    "@storybook/addon-actions": "4.0.2",
-    "@storybook/addon-links": "4.0.2",
-    "@storybook/addons": "4.0.2"
+    "@storybook/angular": "4.0.4",
+    "@storybook/addon-notes": "4.0.4",
+    "@storybook/addon-actions": "4.0.4",
+    "@storybook/addon-links": "4.0.4",
+    "@storybook/addons": "4.0.4"
   }
 }
