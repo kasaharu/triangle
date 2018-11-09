@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.10.4.tgz#8e6fffc61ab3b8fbaf2881d583343223d57d9dd0"
-  dependencies:
-    "@angular-devkit/core" "7.0.4"
-    rxjs "6.3.3"
-
 "@angular-devkit/architect@0.10.5":
   version "0.10.5"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.10.5.tgz#c190c1592998c7c811f31a937d0d04ee62e3a683"
@@ -69,12 +62,12 @@
   optionalDependencies:
     node-sass "4.9.3"
 
-"@angular-devkit/build-ng-packagr@0.10.4":
-  version "0.10.4"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.10.4.tgz#0729ef9f33573e38403b7e3d9b2b7ce9aa5bdc5d"
+"@angular-devkit/build-ng-packagr@0.10.5":
+  version "0.10.5"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.10.5.tgz#755c0f757e8ee315d0f8a37312dbb3dfbff44732"
   dependencies:
-    "@angular-devkit/architect" "0.10.4"
-    "@angular-devkit/core" "7.0.4"
+    "@angular-devkit/architect" "0.10.5"
+    "@angular-devkit/core" "7.0.5"
     rxjs "6.3.3"
     semver "5.5.1"
 
@@ -94,16 +87,6 @@
     "@angular-devkit/architect" "0.10.5"
     "@angular-devkit/core" "7.0.5"
     rxjs "6.3.3"
-
-"@angular-devkit/core@7.0.4":
-  version "7.0.4"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.0.4.tgz#b64c3c36d2bcaf3e42eb27ee2dbbc65373255a7c"
-  dependencies:
-    ajv "6.5.3"
-    chokidar "2.0.4"
-    fast-json-stable-stringify "2.0.0"
-    rxjs "6.3.3"
-    source-map "0.7.3"
 
 "@angular-devkit/core@7.0.5":
   version "7.0.5"
