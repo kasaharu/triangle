@@ -39,7 +39,8 @@
     "lint": "ng lint",
     "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prettier": "prettier --write './**/*.ts'"
   },
   "private": true,
   "dependencies": {
