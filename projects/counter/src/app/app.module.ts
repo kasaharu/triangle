@@ -7,15 +7,9 @@ import { AppComponent } from './app.component';
 import { CountingPageComponent } from './components/counting-page/counting-page.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CountingPageComponent,
-  ],
-  imports: [
-    BrowserModule,
-    RootStoreModule,
-  ],
+  declarations: [AppComponent, CountingPageComponent],
+  imports: [BrowserModule, RootStoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

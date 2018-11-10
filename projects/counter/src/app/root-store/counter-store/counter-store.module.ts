@@ -6,11 +6,7 @@ import { CounterEffects } from './effects';
 import { counterReducer } from './reducers';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    StoreModule.forFeature('counter', counterReducer),
-    EffectsModule.forFeature([CounterEffects]),
-  ],
+  imports: [CommonModule, StoreModule.forFeature('counter', counterReducer), EffectsModule.forFeature([CounterEffects])],
   providers: [CounterEffects],
 })
 export class CounterStoreModule {}

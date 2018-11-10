@@ -3,13 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { UseListComponent } from './components/user-list/user-list.component';
 
-const routes: Routes = [
-  { path: '', redirectTo: '/user-list', pathMatch: 'full' },
-  { path: 'user-list', component: UseListComponent },
-];
+const routes: Routes = [{ path: '', redirectTo: '/user-list', pathMatch: 'full' }, { path: 'user-list', component: UseListComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

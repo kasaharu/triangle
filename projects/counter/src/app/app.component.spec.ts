@@ -7,10 +7,7 @@ import { CountingPageComponent } from './components/counting-page/counting-page.
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [
-        AppComponent,
-        CountingPageComponent,
-      ],
+      declarations: [AppComponent, CountingPageComponent],
       imports: [RootStoreModule],
     }).compileComponents();
   }));

@@ -14,8 +14,7 @@ describe('UseListComponent', () => {
     TestBed.configureTestingModule({
       imports: [HttpClientTestingModule],
       declarations: [UseListComponent],
-    })
-    .compileComponents();
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -31,9 +30,7 @@ describe('UseListComponent', () => {
   });
 
   it('#fetchUserList', () => {
-    const userList = [
-      { id: 1, login: 'test' },
-    ];
+    const userList = [{ id: 1, login: 'test' }];
 
     spyOn(userServive, 'fetchGitHubUserList').and.returnValue(observableOf(userList));
     component.fetchUserList();

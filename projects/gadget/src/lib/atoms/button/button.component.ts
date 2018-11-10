@@ -10,13 +10,11 @@ export class ButtonComponent implements OnInit {
   @Input() additionalClass: string;
   @Output() clickButton = new EventEmitter<boolean>();
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   handleClickEvent() {
     this.clickButton.emit(true);
   }
-
 }

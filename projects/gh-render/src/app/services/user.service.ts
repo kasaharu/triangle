@@ -10,7 +10,7 @@ import { User } from '../models/user';
 export class UserService {
   readonly targetUrl = 'https://api.github.com/users';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   fetchGitHubUserList(): Observable<User[]> {
     return this.http.get<User[]>(this.targetUrl);
