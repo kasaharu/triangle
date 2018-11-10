@@ -3,9 +3,10 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { UserListItemComponent } from './user-list-item/user-list-item.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, UserListItemComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
