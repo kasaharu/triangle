@@ -12,9 +12,8 @@ describe('CountingPageComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RootStoreModule],
-      declarations: [ CountingPageComponent ],
-    })
-    .compileComponents();
+      declarations: [CountingPageComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

@@ -6,16 +6,9 @@ import { AppComponent } from './app.component';
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule,
-        GadgetModule,
-      ],
-      declarations: [
-        AppComponent,
-      ],
-      providers: [
-        { provide: APP_BASE_HREF, useValue : '/' },
-      ],
+      imports: [RouterTestingModule, GadgetModule],
+      declarations: [AppComponent],
+      providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
     }).compileComponents();
   }));
   it('should create the app', async(() => {

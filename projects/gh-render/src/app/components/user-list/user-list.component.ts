@@ -11,13 +11,13 @@ import { UserService } from '../../services/user.service';
 export class UseListComponent implements OnInit {
   userList: User[];
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     this.fetchUserList();
   }
 
   fetchUserList(): void {
-    this.userService.fetchGitHubUserList().subscribe(userList => this.userList = userList);
+    this.userService.fetchGitHubUserList().subscribe((userList) => (this.userList = userList));
   }
 }

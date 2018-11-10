@@ -10,9 +10,8 @@ describe('LinkComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [ LinkComponent ],
-    })
-    .compileComponents();
+      declarations: [LinkComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {

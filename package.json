@@ -39,7 +39,10 @@
     "lint": "ng lint",
     "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "prettier": "yarn prettier:ts && yarn prettier:html",
+    "prettier:ts": "prettier --write --parser 'typescript' './**/*.ts'",
+    "prettier:html": "prettier --write --parser 'angular' './**/*.html'"
   },
   "private": true,
   "dependencies": {
@@ -66,6 +69,11 @@
     "@angular/cli": "7.0.5",
     "@angular/compiler-cli": "7.0.3",
     "@angular/language-service": "7.0.3",
+    "@storybook/addon-actions": "4.0.4",
+    "@storybook/addon-links": "4.0.4",
+    "@storybook/addon-notes": "4.0.4",
+    "@storybook/addons": "4.0.4",
+    "@storybook/angular": "4.0.4",
     "@storybook/cli": "4.0.4",
     "@types/jasmine": "2.8.11",
     "@types/jasminewd2": "2.0.6",
@@ -79,6 +87,7 @@
     "karma-jasmine": "1.1.2",
     "karma-jasmine-html-reporter": "1.4.0",
     "ng-packagr": "4.4.0",
+    "prettier": "1.15.1",
     "protractor": "5.4.1",
     "stylelint": "9.8.0",
     "stylelint-config-standard": "18.2.0",
@@ -86,11 +95,6 @@
     "tsickle": "0.33.1",
     "tslib": "1.9.3",
     "tslint": "5.11.0",
-    "typescript": "3.1.6",
-    "@storybook/angular": "4.0.4",
-    "@storybook/addon-notes": "4.0.4",
-    "@storybook/addon-actions": "4.0.4",
-    "@storybook/addon-links": "4.0.4",
-    "@storybook/addons": "4.0.4"
+    "typescript": "3.1.6"
   }
 }

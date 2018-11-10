@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.router.events.subscribe(event => {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         const lastChildRoute = this.findLastChildRoute(this.route.snapshot);
         this.pageName = lastChildRoute.data['title'];
@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
   }
 
   findLastChildRoute(route: ActivatedRouteSnapshot) {
-    if (route.firstChild === null) { return route; }
+    if (route.firstChild === null) {
+      return route;
+    }
 
     return this.findLastChildRoute(route.firstChild);
   }

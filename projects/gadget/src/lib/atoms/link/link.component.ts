@@ -9,9 +9,7 @@ export class LinkComponent implements OnInit {
   @Input() linkPath: string;
   @Input() linkText: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

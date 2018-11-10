@@ -11,4 +11,4 @@ const routes: Routes = [];
   declarations: [GadgetComponent, ButtonComponent, LinkComponent],
   exports: [GadgetComponent, ButtonComponent, LinkComponent],
 })
-export class GadgetModule { }
+export class GadgetModule {}
