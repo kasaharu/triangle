@@ -8,6 +8,7 @@ import { User } from './user';
   providedIn: 'root',
 })
 export class UserService {
+  // tslint:disable-next-line:variable-name
   private _users$ = new BehaviorSubject<User[]>([]);
 
   get users$() {
@@ -16,7 +17,9 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers() {
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users');
+  fetchUsers() {
+    this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe((users) => {
+      this._users$.next(users);
+    });
   }
 }
