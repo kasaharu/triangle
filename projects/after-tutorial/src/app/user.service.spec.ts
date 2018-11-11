@@ -19,10 +19,10 @@ describe('UserService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('#getUsers', () => {
+  it('#fetchUsers', () => {
     const service: UserService = TestBed.get(UserService);
     const targetUrl = 'https://jsonplaceholder.typicode.com/users';
-    service.getUsers().subscribe();
+    service.fetchUsers();
     const req = httpTestingController.expectOne(targetUrl);
 
     expect(req.request.method).toEqual('GET');
