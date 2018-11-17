@@ -6,7 +6,7 @@ export interface UserListFilter {
 
 export interface State {
   userList: {
-    item: User[];
+    items: User[];
   };
   userListFilter: UserListFilter;
 }
