@@ -8,7 +8,7 @@ import { User } from './user';
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class UserListUsecase {
   get users$() {
     return this.store.select((state) => state.userList.items.filter((user) => user.name.includes(state.userListFilter.nameFilter)));
   }

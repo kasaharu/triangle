@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 
-import { UserService } from './user.service';
+import { UserListUsecase } from './user-list.usecase';
 
-describe('UserService', () => {
+describe('UserListUsecase', () => {
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
@@ -15,14 +15,14 @@ describe('UserService', () => {
   });
 
   it('should be created', () => {
-    const service: UserService = TestBed.get(UserService);
-    expect(service).toBeTruthy();
+    const usecase: UserListUsecase = TestBed.get(UserListUsecase);
+    expect(usecase).toBeTruthy();
   });
 
   it('#fetchUsers', () => {
-    const service: UserService = TestBed.get(UserService);
+    const usecase: UserListUsecase = TestBed.get(UserListUsecase);
     const targetUrl = 'https://jsonplaceholder.typicode.com/users';
-    service.fetchUsers();
+    usecase.fetchUsers();
     const req = httpTestingController.expectOne(targetUrl);
 
     expect(req.request.method).toEqual('GET');

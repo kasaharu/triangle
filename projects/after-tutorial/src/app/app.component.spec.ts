@@ -4,11 +4,11 @@ import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { BehaviorSubject, of as observableOf } from 'rxjs';
 
 import { AppComponent } from './app.component';
-import { UserService } from './user.service';
+import { UserListUsecase } from './user-list.usecase';
 import { User } from './user';
 
 describe('AppComponent', () => {
-  let userService: UserService;
+  let userListUsecase: UserListUsecase;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   }));
 
   beforeEach(() => {
-    userService = TestBed.get(UserService);
+    userListUsecase = TestBed.get(UserListUsecase);
   });
 
   it('should create the app', () => {
@@ -34,7 +34,7 @@ describe('AppComponent', () => {
     const users = [{ id: '1', name: 'Leanne Graham' }];
     const behaviorUser = new BehaviorSubject<User[]>(users);
 
-    spyOn(userService, 'users$').and.returnValue(users);
+    spyOn(userListUsecase, 'users$').and.returnValue(users);
     component.ngOnInit();
 
     // expect(component.users$).toEqual(behaviorUser.asObservable());
