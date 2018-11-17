@@ -10,7 +10,11 @@ import { User } from './user';
 })
 export class UserService {
   get users$() {
-    return this.store.select((state) => state.userList.items);
+    return this.store.select((state) => state.userList.items.filter((user) => user.name.includes(state.userListFilter.nameFilter)));
+  }
+
+  get filter$() {
+    return this.store.select((state) => state.userListFilter);
   }
 
   constructor(private http: HttpClient, private store: Store) {}
@@ -23,6 +27,15 @@ export class UserService {
       userList: {
         ...state.userList,
         items: users,
+      },
+    }));
+  }
+
+  setNameFilter(nameFilter: string) {
+    this.store.update((state) => ({
+      ...state,
+      userListFilter: {
+        nameFilter,
       },
     }));
   }
