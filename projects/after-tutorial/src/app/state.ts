@@ -10,3 +10,12 @@ export interface State {
   };
   userListFilter: UserListFilter;
 }
+
+export const initialState = {
+  userList: {
+    items: [],
+  },
+  userListFilter: {
+    nameFilter: '',
+  },
+};
