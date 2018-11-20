@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { User } from './user';
 import { UserListFilter } from './state';
 import { UserListUsecase } from './user-list.usecase';
 

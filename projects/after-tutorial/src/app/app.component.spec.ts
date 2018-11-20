@@ -1,11 +1,9 @@
 import { TestBed, async } from '@angular/core/testing';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { BehaviorSubject, of as observableOf } from 'rxjs';
 
 import { AppComponent } from './app.component';
 import { UserListUsecase } from './user-list.usecase';
-import { User } from './user';
 
 describe('AppComponent', () => {
   let userListUsecase: UserListUsecase;
