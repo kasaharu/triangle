@@ -27,18 +27,4 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
   });
-
-  it('call ngOnInit() method', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const component = fixture.componentInstance;
-    const users = [{ id: '1', name: 'Leanne Graham' }];
-    const behaviorUser = new BehaviorSubject<User[]>(users);
-
-    spyOn(userListUsecase, 'users$').and.returnValue(users);
-    component.ngOnInit();
-
-    // expect(component.users$).toEqual(behaviorUser.asObservable());
-    // FIXME: 期待した結果ではないのであとで見直す
-    expect(component.users$).toEqual(new BehaviorSubject<User[]>([]).asObservable());
-  });
 });
