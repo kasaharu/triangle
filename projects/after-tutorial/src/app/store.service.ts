@@ -8,6 +8,7 @@ import { State, initialState } from './state';
   providedIn: 'root',
 })
 export class Store {
+  /* tslint:disable-next-line:variable-name */
   private _state$ = new BehaviorSubject<State>(initialState);
 
   constructor() {}
