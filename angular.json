@@ -793,6 +793,137 @@
           }
         }
       }
+    },
+    "after-tutorial": {
+      "root": "projects/after-tutorial/",
+      "sourceRoot": "projects/after-tutorial/src",
+      "projectType": "application",
+      "prefix": "at",
+      "schematics": {
+        "@schematics/angular:component": {
+          "styleext": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/after-tutorial",
+            "index": "projects/after-tutorial/src/index.html",
+            "main": "projects/after-tutorial/src/main.ts",
+            "polyfills": "projects/after-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/after-tutorial/tsconfig.app.json",
+            "assets": [
+              "projects/after-tutorial/src/favicon.ico",
+              "projects/after-tutorial/src/assets"
+            ],
+            "styles": [
+              "projects/after-tutorial/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/after-tutorial/src/environments/environment.ts",
+                  "with": "projects/after-tutorial/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "after-tutorial:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "after-tutorial:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "after-tutorial:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/after-tutorial/src/test.ts",
+            "polyfills": "projects/after-tutorial/src/polyfills.ts",
+            "tsConfig": "projects/after-tutorial/tsconfig.spec.json",
+            "karmaConfig": "projects/after-tutorial/karma.conf.js",
+            "styles": [
+              "projects/after-tutorial/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/after-tutorial/src/favicon.ico",
+              "projects/after-tutorial/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/after-tutorial/tsconfig.app.json",
+              "projects/after-tutorial/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "after-tutorial-e2e": {
+      "root": "projects/after-tutorial-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/after-tutorial-e2e/protractor.conf.js",
+            "devServerTarget": "after-tutorial:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "after-tutorial:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/after-tutorial-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "triangle",
