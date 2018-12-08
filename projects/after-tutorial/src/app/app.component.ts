@@ -9,7 +9,7 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  users = this.userService.users$;
+  users$ = this.userService.users$;
 
   constructor(private userService: UserService) {}
 
