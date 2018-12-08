@@ -17,7 +17,7 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-  getUsers() {
+  fetchUsers() {
     return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe((users) => {
       this._users$.next(users);
     });
