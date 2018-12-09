@@ -5,9 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { UserListItemComponent } from './components/user-list-item/user-list-item.component';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { UserListFilterComponent } from './components/user-list-filter/user-list-filter.component';
 
 @NgModule({
-  declarations: [AppComponent, UserListItemComponent, UserListComponent],
+  declarations: [AppComponent, UserListItemComponent, UserListComponent, UserListFilterComponent],
   imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
