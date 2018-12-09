@@ -27,4 +27,15 @@ export class UserListUsecase {
       };
     });
   }
+
+  setNameFilter(nameFilter: string) {
+    this.store.update((state) => {
+      return {
+        ...state,
+        userListFilter: {
+          nameFilter,
+        },
+      };
+    });
+  }
 }
