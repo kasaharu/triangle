@@ -1,25 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
 
+import { Store } from './store.service';
 import { User } from '../core/models/user';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  // tslint:disable-next-line:variable-name
-  private _users$ = new BehaviorSubject<User[]>([]);
-
   get users$() {
-    return this._users$.asObservable();
+    return this.store.select((state) => state.userList.items);
   }
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private store: Store) {}
 
-  fetchUsers() {
-    return this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').subscribe((users) => {
-      this._users$.next(users);
+  async fetchUsers() {
+    const users = await this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').toPromise();
+
+    this.store.update((state) => {
+      return {
+        ...state,
+        userList: {
+          ...state.userList,
+          items: users,
+        },
+      };
     });
   }
 }
