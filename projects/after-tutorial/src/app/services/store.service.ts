@@ -7,7 +7,7 @@ import { State, initialState } from '../state';
 @Injectable({
   providedIn: 'root',
 })
-export class StoreService {
+export class Store {
   // tslint:disable-next-line:variable-name
   private _state$ = new BehaviorSubject<State>(initialState);
 
