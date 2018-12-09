@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { filter } from 'rxjs/operators';
 
 import { Store } from '../services/store.service';
 import { User } from '../core/models/user';
@@ -9,7 +10,11 @@ import { User } from '../core/models/user';
 })
 export class UserListUsecase {
   get users$() {
-    return this.store.select((state) => state.userList.items);
+    return this.store.select((state) => {
+      return state.userList.items.filter((user) => {
+        return user.name.includes(state.userListFilter.nameFilter);
+      });
+    });
   }
 
   constructor(private http: HttpClient, private store: Store) {}
