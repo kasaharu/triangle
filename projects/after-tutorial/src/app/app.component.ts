@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from './services/user.service';
+import { UserListUsecase } from './usecases/user-list.usecase';
 
 @Component({
   selector: 'at-root',
@@ -8,11 +8,11 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  users$ = this.userService.users$;
+  users$ = this.userListUsecase.users$;
 
-  constructor(private userService: UserService) {}
+  constructor(private userListUsecase: UserListUsecase) {}
 
   ngOnInit() {
-    this.userService.fetchUsers();
+    this.userListUsecase.fetchUsers();
   }
 }

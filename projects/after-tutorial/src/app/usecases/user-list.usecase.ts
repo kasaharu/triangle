@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Store } from './store.service';
+import { Store } from '../services/store.service';
 import { User } from '../core/models/user';
 
 @Injectable({
   providedIn: 'root',
 })
-export class UserService {
+export class UserListUsecase {
   get users$() {
     return this.store.select((state) => state.userList.items);
   }
