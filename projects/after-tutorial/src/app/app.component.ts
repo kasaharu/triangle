@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UserService } from './services/user.service';
+import { UserListUsecase } from './usecases/user-list.usecase';
+import { UserListFilter } from './state';
 
 @Component({
   selector: 'at-root',
@@ -8,11 +9,16 @@ import { UserService } from './services/user.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  users$ = this.userService.users$;
+  users$ = this.userListUsecase.users$;
+  userListFilter$ = this.userListUsecase.filter$;
 
-  constructor(private userService: UserService) {}
+  constructor(private userListUsecase: UserListUsecase) {}
 
   ngOnInit() {
-    this.userService.fetchUsers();
+    this.userListUsecase.fetchUsers();
+  }
+
+  setUserListFilter(value: UserListFilter) {
+    this.userListUsecase.setNameFilter(value.nameFilter);
   }
 }

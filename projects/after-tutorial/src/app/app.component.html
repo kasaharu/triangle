@@ -1,3 +1,4 @@
 <h1>Angular After Tutorial</h1>
 
+<at-user-list-filter [value]="userListFilter$ | async" (valueChanges)="setUserListFilter($event)"></at-user-list-filter>
 <at-user-list [users]="users$ | async"></at-user-list>
