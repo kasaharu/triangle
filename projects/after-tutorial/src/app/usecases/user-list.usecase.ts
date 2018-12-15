@@ -17,6 +17,10 @@ export class UserListUsecase {
     });
   }
 
+  get filter$() {
+    return this.store.select((state) => state.userListFilter);
+  }
+
   constructor(private http: HttpClient, private store: Store) {}
 
   async fetchUsers() {
