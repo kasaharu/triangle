@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { filter } from 'rxjs/operators';
 
 import { Store } from '../services/store.service';
 import { User } from '../core/models/user';
