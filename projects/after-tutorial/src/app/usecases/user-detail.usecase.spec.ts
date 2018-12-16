@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { UserDetailService } from './user-detail.service';
+import { UserDetailUsecase } from './user-detail.usecase';
 
-describe('UserDetailService', () => {
+describe('UserDetailUsecase', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: UserDetailService = TestBed.get(UserDetailService);
+    const service: UserDetailUsecase = TestBed.get(UserDetailUsecase);
     expect(service).toBeTruthy();
   });
 });
