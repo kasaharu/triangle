@@ -9,7 +9,9 @@ import { UserDetailUsecase } from '../../usecases/user-detail.usecase';
   styleUrls: ['./user-detail-page.component.scss'],
 })
 export class UserDetailPageComponent implements OnDestroy {
+  user$ = this.userDetailUsecase.user$;
   private onDestroy$ = new EventEmitter();
+
   constructor(private route: ActivatedRoute, private userDetailUsecase: UserDetailUsecase) {
     this.userDetailUsecase.subscribeRouteChanges(this.route, this.onDestroy$);
   }
