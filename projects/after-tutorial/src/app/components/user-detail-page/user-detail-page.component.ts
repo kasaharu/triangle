@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'at-user-detail-page',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail-page.component.scss'],
 })
 export class UserDetailPageComponent implements OnInit {
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {}
 }
