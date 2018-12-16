@@ -1,3 +1,5 @@
 <ul>
-  <li *ngFor="let user of users"><at-user-list-item [user]="user"></at-user-list-item></li>
+  <li *ngFor="let user of users">
+    <a routerLink="/users/{{ user.id }}"> <at-user-list-item [user]="user"></at-user-list-item> </a>
+  </li>
 </ul>

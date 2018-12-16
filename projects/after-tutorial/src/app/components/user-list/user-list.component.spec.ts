@@ -17,7 +17,7 @@ describe('UserListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(UserListComponent);
     component = fixture.componentInstance;
-    component.users = [{ id: '1', name: 'Leanne Graham' }];
+    component.users = [{ id: '1', name: 'Leanne Graham', email: '', phone: '', company: { name: '' } }];
     fixture.detectChanges();
   });
 
