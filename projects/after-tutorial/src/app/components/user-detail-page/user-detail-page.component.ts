@@ -1,7 +1,7 @@
 import { Component, OnDestroy, EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
+
+import { UserDetailUsecase } from '../../usecases/user-detail.usecase';
 
 @Component({
   selector: 'at-user-detail-page',
@@ -10,14 +10,8 @@ import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 })
 export class UserDetailPageComponent implements OnDestroy {
   private onDestroy$ = new EventEmitter();
-  constructor(private route: ActivatedRoute) {
-    this.route.params
-      .pipe(
-        takeUntil(this.onDestroy$),
-        map((params) => params['userId']),
-        distinctUntilChanged(),
-      )
-      .subscribe();
+  constructor(private route: ActivatedRoute, private userDetailUsecase: UserDetailUsecase) {
+    this.userDetailUsecase.subscribeRouteChanges(this.route, this.onDestroy$);
   }
 
   ngOnDestroy() {

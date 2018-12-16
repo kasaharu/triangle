@@ -1,4 +1,7 @@
 import { Injectable } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
 
 import { Store } from '../services/store.service';
 import { UserApiService } from '../services/user-api.service';
@@ -11,6 +14,16 @@ export class UserDetailUsecase {
     return this.store.select((state) => state.userDetail.user);
   }
   constructor(private store: Store, private userApi: UserApiService) {}
+
+  subscribeRouteChanges(route: ActivatedRoute, untilObservable: Observable<any>) {
+    route.params
+      .pipe(
+        takeUntil(untilObservable),
+        map((params) => params['userId']),
+        distinctUntilChanged(),
+      )
+      .subscribe((userId) => this.onUserIdChanged(userId));
+  }
 
   private async onUserIdChanged(userId: string) {
     this.store.update((state) => {
