@@ -8,10 +8,11 @@ import { UserListItemComponent } from './components/user-list-item/user-list-ite
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserListFilterComponent } from './components/user-list-filter/user-list-filter.component';
 import { UserDetailPageComponent } from './components/user-detail-page/user-detail-page.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [AppComponent, UserListItemComponent, UserListComponent, UserListFilterComponent, UserDetailPageComponent],
-  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule],
+  imports: [BrowserModule, HttpClientModule, ReactiveFormsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })
