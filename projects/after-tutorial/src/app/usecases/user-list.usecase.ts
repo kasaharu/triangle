@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { Store } from '../services/store.service';
-import { User } from '../core/models/user';
+import { UserApiService } from '../services/user-api.service';
 
 @Injectable({
   providedIn: 'root',
@@ -20,10 +19,10 @@ export class UserListUsecase {
     return this.store.select((state) => state.userListFilter);
   }
 
-  constructor(private http: HttpClient, private store: Store) {}
+  constructor(private store: Store, private userApi: UserApiService) {}
 
   async fetchUsers() {
-    const users = await this.http.get<User[]>('https://jsonplaceholder.typicode.com/users').toPromise();
+    const users = await this.userApi.getAllUsers();
 
     this.store.update((state) => {
       return {
