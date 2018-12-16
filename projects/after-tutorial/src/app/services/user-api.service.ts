@@ -16,6 +16,6 @@ export class UserApiService {
   }
 
   async getUserById(id: string) {
-    return await this.http.get<User[]>(`${apiHost}/users/${id}`).toPromise();
+    return await this.http.get<User>(`${apiHost}/users/${id}`).toPromise();
   }
 }
