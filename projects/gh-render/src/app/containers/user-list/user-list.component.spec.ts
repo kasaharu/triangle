@@ -1,28 +1,29 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { of as observableOf } from 'rxjs';
+import { Store } from '@ngrx/store';
 
 import { UseListComponent } from './user-list.component';
-import { UserService } from '../../services/user.service';
+import { RootStoreModule, RootStoreState, UserStoreActions } from '../../root-store';
 
 describe('UseListComponent', () => {
   let component: UseListComponent;
   let fixture: ComponentFixture<UseListComponent>;
-  let userServive: UserService;
+  let store: Store<RootStoreState.State>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, RootStoreModule],
       declarations: [UseListComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
+    store = TestBed.get(Store);
+    spyOn(store, 'dispatch').and.callThrough();
+
     fixture = TestBed.createComponent(UseListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
-    userServive = TestBed.get(UserService);
   });
 
   it('should create', () => {
@@ -30,10 +31,9 @@ describe('UseListComponent', () => {
   });
 
   it('#fetchUserList', () => {
-    const userList = [{ id: 1, login: 'test' }];
+    const action = new UserStoreActions.FetchRequestAction();
 
-    spyOn(userServive, 'fetchGitHubUserList').and.returnValue(observableOf(userList));
     component.fetchUserList();
-    expect(component.userList).toBeTruthy(userList);
+    expect(store.dispatch).toHaveBeenCalledWith(action);
   });
 });
