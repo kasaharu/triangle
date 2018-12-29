@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { RootStoreState, UserStoreActions, UserStoreSelectors } from '../../root-store';
 
 import { User } from '../../core/models';
 import { UserService } from '../../services/user.service';
@@ -10,10 +14,13 @@ import { UserService } from '../../services/user.service';
 })
 export class UseListComponent implements OnInit {
   userList: User[];
+  userList$: Observable<User[]>;
 
-  constructor(private userService: UserService) {}
+  constructor(private store$: Store<RootStoreState.State>, private userService: UserService) {}
 
   ngOnInit() {
+    this.userList$ = this.store$.pipe(select(UserStoreSelectors.selectUser));
+    this.store$.dispatch(new UserStoreActions.FetchRequestAction());
     this.fetchUserList();
   }
 
