@@ -7,9 +7,10 @@ import { RootStoreModule } from './root-store';
 import { AppComponent } from './app.component';
 import { UseListComponent } from './containers/user-list/user-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { UserDetailComponent } from './containers/user-detail/user-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, UseListComponent],
+  declarations: [AppComponent, UseListComponent, UserDetailComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, RootStoreModule],
   providers: [],
   bootstrap: [AppComponent],
