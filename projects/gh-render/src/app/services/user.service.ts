@@ -15,4 +15,8 @@ export class UserService {
   fetchGitHubUserList(): Observable<User[]> {
     return this.http.get<User[]>(this.targetUrl);
   }
+
+  fetchUserDetail(name: string): Observable<User> {
+    return this.http.get<User>(`${this.targetUrl}/${name}`);
+  }
 }
