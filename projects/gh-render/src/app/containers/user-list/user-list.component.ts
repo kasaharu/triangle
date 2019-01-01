@@ -16,7 +16,7 @@ export class UseListComponent implements OnInit {
   constructor(private store$: Store<RootStoreState.State>) {}
 
   ngOnInit() {
-    this.userList$ = this.store$.pipe(select(UserStoreSelectors.selectUser));
+    this.userList$ = this.store$.pipe(select(UserStoreSelectors.selectUsers));
     this.fetchUserList();
   }
 
