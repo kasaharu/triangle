@@ -21,6 +21,6 @@ export class UserDetailComponent implements OnInit {
   }
 
   fetchUserDetail(): void {
-    this.store$.dispatch(new UserStoreActions.FetchDetailRequestAction());
+    this.store$.dispatch(new UserStoreActions.FetchDetailRequestAction('test'));
   }
 }

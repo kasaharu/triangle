@@ -36,7 +36,8 @@ describe('userReducer', () => {
   });
 
   it('FetchDetailRequestAction', () => {
-    expect(userReducer(initialState, new FetchDetailRequestAction())).toEqual(initialState);
+    const userName = 'test';
+    expect(userReducer(initialState, new FetchDetailRequestAction(userName))).toEqual(initialState);
   });
 
   it('FetchDetailSuccessAction', () => {

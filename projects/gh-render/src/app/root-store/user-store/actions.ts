@@ -20,6 +20,7 @@ export class FetchListSuccessAction implements Action {
 
 export class FetchDetailRequestAction implements Action {
   readonly type = ActionTypes.FETCH_DETAIL_REQUEST;
+  constructor(public payload: string) {}
 }
 
 export class FetchDetailSuccessAction implements Action {
