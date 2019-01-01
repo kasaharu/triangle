@@ -19,7 +19,7 @@ export class UserEffects {
 
   @Effect()
   fetchDetail$: Observable<Action> = this.actions$.pipe(
-    ofType(UserStoreActions.ActionTypes.FETCH_DETAIL_REQUEST),
+    ofType<UserStoreActions.FetchDetailRequestAction>(UserStoreActions.ActionTypes.FETCH_DETAIL_REQUEST),
     mergeMap((action) =>
       this.userService.fetchUserDetail(action.payload).pipe(map((userInfo) => new UserStoreActions.FetchDetailSuccessAction(userInfo))),
     ),
