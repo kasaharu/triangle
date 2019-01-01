@@ -21,6 +21,6 @@ export class UseListComponent implements OnInit {
   }
 
   fetchUserList(): void {
-    this.store$.dispatch(new UserStoreActions.FetchRequestAction());
+    this.store$.dispatch(new UserStoreActions.FetchListRequestAction());
   }
 }

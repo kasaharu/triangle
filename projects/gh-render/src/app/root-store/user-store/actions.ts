@@ -7,13 +7,13 @@ export enum ActionTypes {
   FETCH_LIST_SUCCESS = '[User] Fetch List Success',
 }
 
-export class FetchRequestAction implements Action {
+export class FetchListRequestAction implements Action {
   readonly type = ActionTypes.FETCH_LIST_REQUEST;
 }
 
-export class FetchSuccessAction implements Action {
+export class FetchListSuccessAction implements Action {
   readonly type = ActionTypes.FETCH_LIST_SUCCESS;
   constructor(public payload: { users: User[] }) {}
 }
 
-export type ActionsUnion = FetchRequestAction | FetchSuccessAction;
+export type ActionsUnion = FetchListRequestAction | FetchListSuccessAction;

@@ -1,4 +1,4 @@
-import { FetchRequestAction, FetchSuccessAction } from './actions';
+import { FetchListRequestAction, FetchListSuccessAction } from './actions';
 import { userReducer } from './reducers';
 import { initialState } from './state';
 import { User } from '../../core/models';
@@ -27,11 +27,11 @@ describe('userReducer', () => {
     },
   ];
 
-  it('FetchRequestAction', () => {
-    expect(userReducer(initialState, new FetchRequestAction())).toEqual(initialState);
+  it('FetchListRequestAction', () => {
+    expect(userReducer(initialState, new FetchListRequestAction())).toEqual(initialState);
   });
 
-  it('FetchRequestAction', () => {
-    expect(userReducer(initialState, new FetchSuccessAction({ users }))).toEqual({ users });
+  it('FetchListSuccessAction', () => {
+    expect(userReducer(initialState, new FetchListSuccessAction({ users }))).toEqual({ users });
   });
 });
