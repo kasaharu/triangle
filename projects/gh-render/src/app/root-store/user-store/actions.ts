@@ -18,4 +18,13 @@ export class FetchListSuccessAction implements Action {
   constructor(public payload: { users: User[] }) {}
 }
 
-export type ActionsUnion = FetchListRequestAction | FetchListSuccessAction;
+export class FetchDetailRequestAction implements Action {
+  readonly type = ActionTypes.FETCH_DETAIL_REQUEST;
+}
+
+export class FetchDetailSuccessAction implements Action {
+  readonly type = ActionTypes.FETCH_DETAIL_SUCCESS;
+  constructor(public payload: { users: User }) {}
+}
+
+export type ActionsUnion = FetchListRequestAction | FetchListSuccessAction | FetchDetailRequestAction | FetchDetailSuccessAction;
