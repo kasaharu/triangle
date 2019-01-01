@@ -3,16 +3,16 @@ import { Action } from '@ngrx/store';
 import { User } from '../../core/models';
 
 export enum ActionTypes {
-  FETCH_REQUEST = '[User] Fetch Request',
-  FETCH_SUCCESS = '[User] Fetch Success',
+  FETCH_LIST_REQUEST = '[User] Fetch List Request',
+  FETCH_LIST_SUCCESS = '[User] Fetch List Success',
 }
 
 export class FetchRequestAction implements Action {
-  readonly type = ActionTypes.FETCH_REQUEST;
+  readonly type = ActionTypes.FETCH_LIST_REQUEST;
 }
 
 export class FetchSuccessAction implements Action {
-  readonly type = ActionTypes.FETCH_SUCCESS;
+  readonly type = ActionTypes.FETCH_LIST_SUCCESS;
   constructor(public payload: { users: User[] }) {}
 }
 
