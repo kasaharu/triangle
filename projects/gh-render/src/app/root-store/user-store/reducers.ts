@@ -7,6 +7,10 @@ export function userReducer(state = initialState, action: ActionsUnion): State {
       return state;
     case ActionTypes.FETCH_LIST_SUCCESS:
       return { ...state, users: action.payload };
+    case ActionTypes.FETCH_DETAIL_REQUEST:
+      return state;
+    case ActionTypes.FETCH_DETAIL_SUCCESS:
+      return { ...state, selectedUser: action.payload };
     default:
       return state;
   }
