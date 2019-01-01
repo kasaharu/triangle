@@ -25,7 +25,7 @@ describe('UserStoreSelector', () => {
       site_admin: false,
     },
   ];
-  const state: State = { users };
+  const state: State = { users, selectedUser: null };
 
   it('selectUser', () => {
     expect(selectUser.projector(state)).toEqual(users);

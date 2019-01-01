@@ -15,7 +15,7 @@ export class FetchListRequestAction implements Action {
 
 export class FetchListSuccessAction implements Action {
   readonly type = ActionTypes.FETCH_LIST_SUCCESS;
-  constructor(public payload: { users: User[] }) {}
+  constructor(public payload: User[]) {}
 }
 
 export class FetchDetailRequestAction implements Action {
@@ -24,7 +24,7 @@ export class FetchDetailRequestAction implements Action {
 
 export class FetchDetailSuccessAction implements Action {
   readonly type = ActionTypes.FETCH_DETAIL_SUCCESS;
-  constructor(public payload: { users: User }) {}
+  constructor(public payload: User) {}
 }
 
 export type ActionsUnion = FetchListRequestAction | FetchListSuccessAction | FetchDetailRequestAction | FetchDetailSuccessAction;

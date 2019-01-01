@@ -32,6 +32,6 @@ describe('userReducer', () => {
   });
 
   it('FetchListSuccessAction', () => {
-    expect(userReducer(initialState, new FetchListSuccessAction({ users }))).toEqual({ users });
+    expect(userReducer(initialState, new FetchListSuccessAction(users))).toEqual({ ...initialState, users });
   });
 });

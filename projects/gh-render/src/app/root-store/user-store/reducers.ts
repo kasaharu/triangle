@@ -6,7 +6,7 @@ export function userReducer(state = initialState, action: ActionsUnion): State {
     case ActionTypes.FETCH_LIST_REQUEST:
       return state;
     case ActionTypes.FETCH_LIST_SUCCESS:
-      return action.payload;
+      return { ...state, users: action.payload };
     default:
       return state;
   }

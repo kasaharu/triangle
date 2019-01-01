@@ -14,8 +14,6 @@ export class UserEffects {
   @Effect()
   fetch$: Observable<Action> = this.actions$.pipe(
     ofType(UserStoreActions.ActionTypes.FETCH_LIST_REQUEST),
-    mergeMap(() =>
-      this.userService.fetchGitHubUserList().pipe(map((userList) => new UserStoreActions.FetchListSuccessAction({ users: userList }))),
-    ),
+    mergeMap(() => this.userService.fetchGitHubUserList().pipe(map((userList) => new UserStoreActions.FetchListSuccessAction(userList)))),
   );
 }
