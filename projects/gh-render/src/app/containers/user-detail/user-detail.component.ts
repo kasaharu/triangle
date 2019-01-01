@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { Observable } from 'rxjs';
+
+import { RootStoreState, UserStoreActions, UserStoreSelectors } from '../../root-store';
+import { User } from '../../core/models';
 
 @Component({
   selector: 'gh-user-detail',
@@ -6,7 +11,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail.component.scss'],
 })
 export class UserDetailComponent implements OnInit {
-  constructor() {}
+  user$: Observable<User>;
 
-  ngOnInit() {}
+  constructor(private store$: Store<RootStoreState.State>) {}
+
+  ngOnInit() {
+    this.user$ = this.store$.pipe(select(UserStoreSelectors.selectUser));
+    this.fetchUserDetail();
+  }
+
+  fetchUserDetail(): void {
+    this.store$.dispatch(new UserStoreActions.FetchDetailRequestAction());
+  }
 }
