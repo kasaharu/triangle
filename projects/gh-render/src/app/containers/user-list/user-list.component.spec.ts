@@ -32,7 +32,7 @@ describe('UseListComponent', () => {
   });
 
   it('#fetchUserList', () => {
-    const action = new UserStoreActions.FetchRequestAction();
+    const action = new UserStoreActions.FetchListRequestAction();
 
     component.fetchUserList();
     expect(store.dispatch).toHaveBeenCalledWith(action);

@@ -12,10 +12,16 @@ export class UserEffects {
   constructor(private actions$: Actions, private userService: UserService) {}
 
   @Effect()
-  fetch$: Observable<Action> = this.actions$.pipe(
-    ofType(UserStoreActions.ActionTypes.FETCH_REQUEST),
-    mergeMap(() =>
-      this.userService.fetchGitHubUserList().pipe(map((userList) => new UserStoreActions.FetchSuccessAction({ users: userList }))),
+  fetchList$: Observable<Action> = this.actions$.pipe(
+    ofType(UserStoreActions.ActionTypes.FETCH_LIST_REQUEST),
+    mergeMap(() => this.userService.fetchGitHubUserList().pipe(map((userList) => new UserStoreActions.FetchListSuccessAction(userList)))),
+  );
+
+  @Effect()
+  fetchDetail$: Observable<Action> = this.actions$.pipe(
+    ofType<UserStoreActions.FetchDetailRequestAction>(UserStoreActions.ActionTypes.FETCH_DETAIL_REQUEST),
+    mergeMap((action) =>
+      this.userService.fetchUserDetail(action.payload).pipe(map((userInfo) => new UserStoreActions.FetchDetailSuccessAction(userInfo))),
     ),
   );
 }

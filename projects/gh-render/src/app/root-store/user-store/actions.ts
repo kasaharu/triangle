@@ -3,17 +3,29 @@ import { Action } from '@ngrx/store';
 import { User } from '../../core/models';
 
 export enum ActionTypes {
-  FETCH_REQUEST = '[User] Fetch Request',
-  FETCH_SUCCESS = '[User] Fetch Success',
+  FETCH_LIST_REQUEST = '[User] Fetch List Request',
+  FETCH_LIST_SUCCESS = '[User] Fetch List Success',
+  FETCH_DETAIL_REQUEST = '[User] Fetch Detail Request',
+  FETCH_DETAIL_SUCCESS = '[User] Fetch Detail Success',
 }
 
-export class FetchRequestAction implements Action {
-  readonly type = ActionTypes.FETCH_REQUEST;
+export class FetchListRequestAction implements Action {
+  readonly type = ActionTypes.FETCH_LIST_REQUEST;
 }
 
-export class FetchSuccessAction implements Action {
-  readonly type = ActionTypes.FETCH_SUCCESS;
-  constructor(public payload: { users: User[] }) {}
+export class FetchListSuccessAction implements Action {
+  readonly type = ActionTypes.FETCH_LIST_SUCCESS;
+  constructor(public payload: User[]) {}
 }
 
-export type ActionsUnion = FetchRequestAction | FetchSuccessAction;
+export class FetchDetailRequestAction implements Action {
+  readonly type = ActionTypes.FETCH_DETAIL_REQUEST;
+  constructor(public payload: string) {}
+}
+
+export class FetchDetailSuccessAction implements Action {
+  readonly type = ActionTypes.FETCH_DETAIL_SUCCESS;
+  constructor(public payload: User) {}
+}
+
+export type ActionsUnion = FetchListRequestAction | FetchListSuccessAction | FetchDetailRequestAction | FetchDetailSuccessAction;
