@@ -17,10 +17,10 @@ export class UserDetailComponent implements OnInit {
 
   ngOnInit() {
     this.user$ = this.store$.pipe(select(UserStoreSelectors.selectUser));
-    this.fetchUserDetail();
+    this.fetchUserDetail('test');
   }
 
-  fetchUserDetail(): void {
-    this.store$.dispatch(new UserStoreActions.FetchDetailRequestAction('test'));
+  fetchUserDetail(userName: string): void {
+    this.store$.dispatch(new UserStoreActions.FetchDetailRequestAction(userName));
   }
 }
