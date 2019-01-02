@@ -1,6 +1,6 @@
 <div class="mod-user-list" *ngIf="userList$">
   <div class="mod-user" *ngFor="let user of (userList$ | async)">
-    <a routerLink="/user-detail/{{ user.id }}"> <img class="user-avatar" src="{{ user.avatar_url }}" /> </a>
+    <a routerLink="/user-detail/{{ user.login }}"> <img class="user-avatar" src="{{ user.avatar_url }}" /> </a>
     <div class="user-info">
       <div>{{ user.id }}</div>
       <div>{{ user.login }}</div>
