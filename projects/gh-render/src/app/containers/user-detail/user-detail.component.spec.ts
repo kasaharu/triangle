@@ -1,5 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 import { Store } from '@ngrx/store';
 
 import { UserDetailComponent } from './user-detail.component';
@@ -13,7 +14,7 @@ describe('UserDetailComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [UserDetailComponent],
-      imports: [HttpClientTestingModule, RootStoreModule],
+      imports: [HttpClientTestingModule, RouterTestingModule, RootStoreModule],
     }).compileComponents();
   }));
 
