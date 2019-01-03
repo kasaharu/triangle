@@ -1,1 +1,3 @@
-<p>{{ (user$ | async)?.login }}</p>
+<ng-container *ngIf="(user$ | async) as user">
+  <p>{{ user.login }}</p>
+</ng-container>
