@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { RootStoreModule } from './root-store';
 
@@ -11,7 +12,7 @@ import { UserDetailComponent } from './containers/user-detail/user-detail.compon
 
 @NgModule({
   declarations: [AppComponent, UseListComponent, UserDetailComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RootStoreModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, RootStoreModule, StoreDevtoolsModule.instrument({ maxAge: 25 })],
   providers: [],
   bootstrap: [AppComponent],
 })
