@@ -7,6 +7,7 @@ export enum ActionTypes {
   FETCH_LIST_SUCCESS = '[User] Fetch List Success',
   FETCH_DETAIL_REQUEST = '[User] Fetch Detail Request',
   FETCH_DETAIL_SUCCESS = '[User] Fetch Detail Success',
+  RESET_DETAIL = '[User] Reset Detail',
 }
 
 export class FetchListRequestAction implements Action {
@@ -28,4 +29,13 @@ export class FetchDetailSuccessAction implements Action {
   constructor(public payload: User) {}
 }
 
-export type ActionsUnion = FetchListRequestAction | FetchListSuccessAction | FetchDetailRequestAction | FetchDetailSuccessAction;
+export class ResetDetailAction implements Action {
+  readonly type = ActionTypes.RESET_DETAIL;
+}
+
+export type ActionsUnion =
+  | FetchListRequestAction
+  | FetchListSuccessAction
+  | FetchDetailRequestAction
+  | FetchDetailSuccessAction
+  | ResetDetailAction;
