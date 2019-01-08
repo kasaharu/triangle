@@ -18,9 +18,14 @@ export class UseListComponent implements OnInit {
   ngOnInit() {
     this.userList$ = this.store$.pipe(select(UserStoreSelectors.selectUsers));
     this.fetchUserList();
+    this.resetUserDetail();
   }
 
   fetchUserList(): void {
     this.store$.dispatch(new UserStoreActions.FetchListRequestAction());
+  }
+
+  resetUserDetail(): void {
+    this.store$.dispatch(new UserStoreActions.ResetDetailAction());
   }
 }
