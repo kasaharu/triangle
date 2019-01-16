@@ -32,6 +32,7 @@
     "lib:build": "ng build gadget",
     "lib:test": "ng test gadget",
     "lib:test:1": "ng test gadget --watch=false --code-coverage",
+    "lib:package": "cd dist/gadget && yarn pack --filename gadget.tgz",
     "build-app": "ng build triangle",
     "test-app": "ng test triangle",
     "test-app:1": "ng test triangle --watch=false --code-coverage",
