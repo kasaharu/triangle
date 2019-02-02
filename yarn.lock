@@ -11066,9 +11066,9 @@ tsconfig-paths@^3.4.0:
     minimist "^1.2.0"
     strip-bom "^3.0.0"
 
-tsickle@0.34.2:
-  version "0.34.2"
-  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.34.2.tgz#cc06c5de19c9e639d7a7fd69c4c57253e52fa858"
+tsickle@0.34.3:
+  version "0.34.3"
+  resolved "https://registry.yarnpkg.com/tsickle/-/tsickle-0.34.3.tgz#8085067a26d7bff466ddadb2eba18849b49159b8"
   dependencies:
     minimist "^1.2.0"
     mkdirp "^0.5.1"
