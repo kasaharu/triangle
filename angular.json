@@ -793,6 +793,138 @@
           }
         }
       }
+    },
+    "canaria": {
+      "root": "projects/canaria/",
+      "sourceRoot": "projects/canaria/src",
+      "projectType": "application",
+      "prefix": "canaria",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/canaria",
+            "index": "projects/canaria/src/index.html",
+            "main": "projects/canaria/src/main.ts",
+            "polyfills": "projects/canaria/src/polyfills.ts",
+            "tsConfig": "projects/canaria/tsconfig.app.json",
+            "assets": [
+              "projects/canaria/src/favicon.ico",
+              "projects/canaria/src/assets"
+            ],
+            "styles": [
+              "projects/canaria/src/styles.scss"
+            ],
+            "scripts": [],
+            "es5BrowserSupport": true
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/canaria/src/environments/environment.ts",
+                  "with": "projects/canaria/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "canaria:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "canaria:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "canaria:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/canaria/src/test.ts",
+            "polyfills": "projects/canaria/src/polyfills.ts",
+            "tsConfig": "projects/canaria/tsconfig.spec.json",
+            "karmaConfig": "projects/canaria/karma.conf.js",
+            "styles": [
+              "projects/canaria/src/styles.scss"
+            ],
+            "scripts": [],
+            "assets": [
+              "projects/canaria/src/favicon.ico",
+              "projects/canaria/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/canaria/tsconfig.app.json",
+              "projects/canaria/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "canaria-e2e": {
+      "root": "projects/canaria-e2e/",
+      "projectType": "application",
+      "prefix": "",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/canaria-e2e/protractor.conf.js",
+            "devServerTarget": "canaria:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "canaria:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "projects/canaria-e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "triangle",
