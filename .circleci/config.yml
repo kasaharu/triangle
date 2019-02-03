@@ -69,6 +69,16 @@ jobs:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn lib:build
       - run: yarn tm:build
+  build-canaria:
+    docker:
+      - image: circleci/node:8.14.0-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start build for canaria"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn lib:build
+      - run: yarn canaria:build
   build-cnt:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -164,6 +174,18 @@ jobs:
       - run: yarn tm:test:1
       - store_artifacts:
           path: coverage
+  test-canaria:
+    docker:
+      - image: circleci/node:8.14.0-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start test for canaria"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn lib:build
+      - run: yarn canaria:test:1
+      - store_artifacts:
+          path: coverage
   test-cnt:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -230,6 +252,16 @@ jobs:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn lib:build
       - run: yarn tm:e2e
+  e2e-canaria:
+    docker:
+      - image: circleci/node:8.14.0-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start e2e-canaria"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn lib:build
+      - run: yarn canaria:e2e
   e2e-cnt:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -277,6 +309,9 @@ workflows:
       - build-tm:
           requires:
             - build-lib
+      - build-canaria:
+          requires:
+            - build-lib
       - build-cnt:
           requires:
             - build-lib
@@ -307,6 +342,9 @@ workflows:
       - test-tm:
           requires:
             - build-tm
+      - test-canaria:
+          requires:
+            - build-canaria
       - test-cnt:
           requires:
             - build-cnt
@@ -325,6 +363,9 @@ workflows:
       - e2e-tm:
           requires:
             - build-tm
+      - e2e-canaria:
+          requires:
+            - build-canaria
       - e2e-cnt:
           requires:
             - build-cnt
