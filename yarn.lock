@@ -109,7 +109,7 @@
   dependencies:
     tslib "^1.9.0"
 
-"@angular/cdk@~7.3.0":
+"@angular/cdk@7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-7.3.0.tgz#957668181bd7f113c78e53ec82d50a15e6ba6ee3"
   dependencies:
@@ -185,7 +185,7 @@
   version "7.2.4"
   resolved "https://registry.yarnpkg.com/@angular/language-service/-/language-service-7.2.4.tgz#db72460040b070410cbff678410c142f4d682af8"
 
-"@angular/material@^7.3.0":
+"@angular/material@7.3.0":
   version "7.3.0"
   resolved "https://registry.yarnpkg.com/@angular/material/-/material-7.3.0.tgz#66df738234a57f03618c55ed9c83c080531d7aad"
   dependencies:
@@ -5632,7 +5632,7 @@ gzip-size@5.0.0:
     duplexer "^0.1.1"
     pify "^3.0.0"
 
-hammerjs@^2.0.8:
+hammerjs@2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/hammerjs/-/hammerjs-2.0.8.tgz#04ef77862cff2bb79d30f7692095930222bf60f1"
 
