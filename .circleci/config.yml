@@ -39,16 +39,6 @@ jobs:
       - run: yarn build-storybook
       - store_artifacts:
           path: storybook-static
-  build-app:
-    docker:
-      - image: circleci/node:8.14.0-stretch-browsers
-    steps:
-      - checkout
-      - run: echo "Start build for triangle"
-      - restore_cache:
-          key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn lib:build
-      - run: yarn build-app
   build-gh:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -138,18 +128,6 @@ jobs:
       - run: yarn lib:test:1
       - store_artifacts:
           path: coverage
-  test-app:
-    docker:
-      - image: circleci/node:8.14.0-stretch-browsers
-    steps:
-      - checkout
-      - run: echo "Start test for triangle"
-      - restore_cache:
-          key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn lib:build
-      - run: yarn test-app:1
-      - store_artifacts:
-          path: coverage
   test-gh:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -222,16 +200,6 @@ jobs:
       - run: yarn at:test:1
       - store_artifacts:
           path: coverage
-  e2e-app:
-    docker:
-      - image: circleci/node:8.14.0-stretch-browsers
-    steps:
-      - checkout
-      - run: echo "Start e2e-app"
-      - restore_cache:
-          key: triangle-v1-{{ checksum "yarn.lock" }}
-      - run: yarn lib:build
-      - run: yarn e2e-app
   e2e-gh:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -300,9 +268,6 @@ workflows:
       - build-lib:
           requires:
             - install-packages
-      - build-app:
-          requires:
-            - build-lib
       - build-gh:
           requires:
             - build-lib
@@ -326,16 +291,13 @@ workflows:
             - build-lib
       - lint:
           requires:
-            - build-app
+            - build-lib
       - stylelint:
           requires:
-            - build-app
+            - build-lib
       - test-lib:
           requires:
             - build-lib
-      - test-app:
-          requires:
-            - build-app
       - test-gh:
           requires:
             - build-gh
@@ -354,9 +316,6 @@ workflows:
       - test-at:
           requires:
             - build-at
-      - e2e-app:
-          requires:
-            - build-app
       - e2e-gh:
           requires:
             - build-gh
