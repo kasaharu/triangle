@@ -65,7 +65,7 @@
     "@ngrx/store-devtools": "7.2.0",
     "core-js": "2.6.5",
     "hammerjs": "2.0.8",
-    "rxjs": "6.3.3",
+    "rxjs": "6.4.0",
     "zone.js": "0.8.29"
   },
   "devDependencies": {
