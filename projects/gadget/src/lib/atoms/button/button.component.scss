@@ -65,7 +65,7 @@
   }
 
   &.is-disabled,
-  &[disabled="disabled"],
+  &[disabled='disabled'],
   &[disabled] {
     color: #ccc;
     border-color: #eee;
