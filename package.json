@@ -42,9 +42,8 @@
     "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prettier": "yarn prettier:ts && yarn prettier:html",
-    "prettier:ts": "prettier --write --parser 'typescript' './**/*.ts'",
-    "prettier:html": "prettier --write --parser 'angular' './**/*.html'"
+    "prettier": "prettier --write './**/*.{ts,html,scss}'",
+    "prettier:check": "prettier --check './**/*.{ts,html,scss}'"
   },
   "private": true,
   "dependencies": {

@@ -117,6 +117,15 @@ jobs:
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
       - run: yarn stylelint
+  format-check:
+    docker:
+      - image: circleci/node:8.14.0-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start format-check"
+      - restore_cache:
+          key: triangle-v1-{{ checksum "yarn.lock" }}
+      - run: yarn prettier:check
   test-lib:
     docker:
       - image: circleci/node:8.14.0-stretch-browsers
@@ -265,9 +274,20 @@ workflows:
   build_and_test:
     jobs:
       - install-packages
-      - build-lib:
+      - lint:
           requires:
             - install-packages
+      - stylelint:
+          requires:
+            - install-packages
+      - format-check:
+          requires:
+            - install-packages
+      - build-lib:
+          requires:
+            - lint
+            - stylelint
+            - format-check
       # - build-gh:
       #     requires:
       #       - build-lib
@@ -287,12 +307,6 @@ workflows:
           requires:
             - build-lib
       - build-storybook:
-          requires:
-            - build-lib
-      - lint:
-          requires:
-            - build-lib
-      - stylelint:
           requires:
             - build-lib
       - test-lib:
