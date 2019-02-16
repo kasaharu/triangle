@@ -268,12 +268,12 @@ workflows:
       - build-lib:
           requires:
             - install-packages
-      - build-gh:
-          requires:
-            - build-lib
-      - build-tm:
-          requires:
-            - build-lib
+      # - build-gh:
+      #     requires:
+      #       - build-lib
+      # - build-tm:
+      #    requires:
+      #      - build-lib
       - build-canaria:
           requires:
             - build-lib
@@ -298,12 +298,12 @@ workflows:
       - test-lib:
           requires:
             - build-lib
-      - test-gh:
-          requires:
-            - build-gh
-      - test-tm:
-          requires:
-            - build-tm
+      # - test-gh:
+      #     requires:
+      #       - build-gh
+      # - test-tm:
+      #     requires:
+      #       - build-tm
       - test-canaria:
           requires:
             - build-canaria
@@ -316,12 +316,12 @@ workflows:
       - test-at:
           requires:
             - build-at
-      - e2e-gh:
-          requires:
-            - build-gh
-      - e2e-tm:
-          requires:
-            - build-tm
+      # - e2e-gh:
+      #     requires:
+      #       - build-gh
+      # - e2e-tm:
+      #     requires:
+      #       - build-tm
       - e2e-canaria:
           requires:
             - build-canaria
