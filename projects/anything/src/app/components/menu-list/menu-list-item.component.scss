@@ -1,3 +1,5 @@
+@import 'menu-list-base';
+
 :host {
-  flex: 0 0 25%;
+  @include menu-list-item();
 }
