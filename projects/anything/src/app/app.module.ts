@@ -13,7 +13,15 @@ import { MenuListComponent } from './components/menu-list/menu-list.component';
 import { MenuListItemComponent } from './components/menu-list-item/menu-list-item.component';
 
 @NgModule({
-  declarations: [AppComponent, Page1Component, Page2Component, Page3Component, P1Section1Component, MenuListComponent, MenuListItemComponent],
+  declarations: [
+    AppComponent,
+    Page1Component,
+    Page2Component,
+    Page3Component,
+    P1Section1Component,
+    MenuListComponent,
+    MenuListItemComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
