@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'gad-button',
+  selector: 'button[gad-button]',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })
