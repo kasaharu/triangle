@@ -10,7 +10,7 @@ import { Page2Component } from './components/page2/page2.component';
 import { Page3Component } from './components/page3/page3.component';
 import { P1Section1Component } from './components/p1-section1/p1-section1.component';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
-import { MenuListItemComponent } from './components/menu-list-item/menu-list-item.component';
+import { MenuListItemComponent } from './components/menu-list/menu-list-item.component';
 
 @NgModule({
   declarations: [
