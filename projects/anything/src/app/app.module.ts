@@ -10,9 +10,10 @@ import { Page2Component } from './components/page2/page2.component';
 import { Page3Component } from './components/page3/page3.component';
 import { P1Section1Component } from './components/p1-section1/p1-section1.component';
 import { MenuListComponent } from './components/menu-list/menu-list.component';
+import { MenuListItemComponent } from './components/menu-list-item/menu-list-item.component';
 
 @NgModule({
-  declarations: [AppComponent, Page1Component, Page2Component, Page3Component, P1Section1Component, MenuListComponent],
+  declarations: [AppComponent, Page1Component, Page2Component, Page3Component, P1Section1Component, MenuListComponent, MenuListItemComponent],
   imports: [BrowserModule, AppRoutingModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
