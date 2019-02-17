@@ -1,0 +1,8 @@
+@mixin menu-list() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin menu-list-item {
+  flex: 0 0 25%;
+}

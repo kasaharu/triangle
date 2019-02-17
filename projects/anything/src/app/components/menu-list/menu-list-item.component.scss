@@ -1,0 +1,5 @@
+@import 'menu-list-base';
+
+:host {
+  @include menu-list-item();
+}

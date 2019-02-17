@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Page3Component implements OnInit {
   constructor() {}
+  menuList = [{ id: 1, label: 'hoge1' }, { id: 2, label: 'hoge2' }];
 
   ngOnInit() {}
 }
