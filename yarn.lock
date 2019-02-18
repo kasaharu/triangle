@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@angular-devkit/architect@0.13.1":
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.13.1.tgz#39597ce94f72d89bdd89ee567cb937cff4c13b98"
-  dependencies:
-    "@angular-devkit/core" "7.3.1"
-    rxjs "6.3.3"
-
 "@angular-devkit/architect@0.13.2":
   version "0.13.2"
   resolved "https://registry.yarnpkg.com/@angular-devkit/architect/-/architect-0.13.2.tgz#9e24978b5aeb45322702f756a1f705f0e76ab1f3"
@@ -69,12 +62,13 @@
   optionalDependencies:
     node-sass "4.11.0"
 
-"@angular-devkit/build-ng-packagr@0.13.1":
-  version "0.13.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.13.1.tgz#3508523a039f71ccff1364db553a904e4db2c8ea"
+"@angular-devkit/build-ng-packagr@0.13.2":
+  version "0.13.2"
+  resolved "https://registry.yarnpkg.com/@angular-devkit/build-ng-packagr/-/build-ng-packagr-0.13.2.tgz#f1a83bbe84451669cc31fac3d305bf704da6dcd7"
+  integrity sha512-QJc4B2Q+dK++Ns17yLIo8Q/1HRn6f4AheayiskaOMEEvYqDNohaqb+6xDp30WAn4zgjRObiuH1EFb3XdTLMrCQ==
   dependencies:
-    "@angular-devkit/architect" "0.13.1"
-    "@angular-devkit/core" "7.3.1"
+    "@angular-devkit/architect" "0.13.2"
+    "@angular-devkit/core" "7.3.2"
     rxjs "6.3.3"
     semver "5.6.0"
 
@@ -96,16 +90,6 @@
     "@angular-devkit/architect" "0.13.2"
     "@angular-devkit/core" "7.3.2"
     rxjs "6.3.3"
-
-"@angular-devkit/core@7.3.1":
-  version "7.3.1"
-  resolved "https://registry.yarnpkg.com/@angular-devkit/core/-/core-7.3.1.tgz#d92f6545796579cabdcfc29579a2c977f7a96c6c"
-  dependencies:
-    ajv "6.7.0"
-    chokidar "2.0.4"
-    fast-json-stable-stringify "2.0.0"
-    rxjs "6.3.3"
-    source-map "0.7.3"
 
 "@angular-devkit/core@7.3.2":
   version "7.3.2"
@@ -1880,15 +1864,6 @@ ajv-errors@^1.0.0:
 ajv-keywords@^3.1.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/ajv-keywords/-/ajv-keywords-3.2.0.tgz#e86b819c602cf8821ad637413698f1dec021847a"
-
-ajv@6.7.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/ajv/-/ajv-6.7.0.tgz#e3ce7bb372d6577bb1839f1dfdfcbf5ad2948d96"
-  dependencies:
-    fast-deep-equal "^2.0.1"
-    fast-json-stable-stringify "^2.0.0"
-    json-schema-traverse "^0.4.1"
-    uri-js "^4.2.2"
 
 ajv@6.9.1:
   version "6.9.1"
