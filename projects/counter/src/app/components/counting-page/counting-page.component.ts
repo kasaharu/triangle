@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { RootStoreState, CounterStoreActions, CounterStoreSelectors, CounterStoreState } from '../../root-store';
+import { CounterStoreActions, CounterStoreSelectors, CounterStoreState, RootStoreState } from '../../root-store';
 
 @Component({
   selector: 'cnt-counting-page',

@@ -1,4 +1,4 @@
-import { CounterActionTypes, CounterActionsUnion } from './actions';
+import { CounterActionsUnion, CounterActionTypes } from './actions';
 import { initialState, State } from './state';
 
 export function counterReducer(state: State = initialState, action: CounterActionsUnion) {
