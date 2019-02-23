@@ -1,5 +1,5 @@
-import { TestBed, async } from '@angular/core/testing';
 import { APP_BASE_HREF } from '@angular/common';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { GadgetModule } from 'gadget';
 import { AppComponent } from './app.component';
