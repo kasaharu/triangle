@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { GadgetComponent } from './gadget.component';
+import { RouterModule, Routes } from '@angular/router';
 import { ButtonComponent } from './atoms/button/button.component';
 import { LinkComponent } from './atoms/link/link.component';
+import { GadgetComponent } from './gadget.component';
 
 const routes: Routes = [];
 

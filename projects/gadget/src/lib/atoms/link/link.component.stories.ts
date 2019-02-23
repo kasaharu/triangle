@@ -1,5 +1,5 @@
-import { storiesOf } from '@storybook/angular';
 import { RouterTestingModule } from '@angular/router/testing';
+import { storiesOf } from '@storybook/angular';
 
 import { LinkComponent } from './link.component';
 
