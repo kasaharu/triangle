@@ -1,6 +1,6 @@
-import { selectUsers, selectUser } from './selectors';
-import { State } from './state';
 import { User } from '../../core/models';
+import { selectUser, selectUsers } from './selectors';
+import { State } from './state';
 
 describe('UserStoreSelector', () => {
   const user: User = {

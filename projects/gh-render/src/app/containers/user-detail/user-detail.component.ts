@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Store, select } from '@ngrx/store';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 
-import { RootStoreState, UserStoreActions, UserStoreSelectors } from '../../root-store';
 import { User } from '../../core/models';
+import { RootStoreState, UserStoreActions, UserStoreSelectors } from '../../root-store';
 
 @Component({
   selector: 'gh-user-detail',
