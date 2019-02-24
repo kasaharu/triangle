@@ -1,6 +1,6 @@
-import { storiesOf } from '@storybook/angular';
-import { withNotes } from '@storybook/addon-notes';
 import { action } from '@storybook/addon-actions';
+import { withNotes } from '@storybook/addon-notes';
+import { storiesOf } from '@storybook/angular';
 
 import { ButtonComponent } from './button.component';
 

@@ -1,5 +1,5 @@
-import { ActionTypes, ActionsUnion } from './actions';
-import { State, initialState } from './state';
+import { ActionsUnion, ActionTypes } from './actions';
+import { initialState, State } from './state';
 
 export function userReducer(state = initialState, action: ActionsUnion): State {
   switch (action.type) {

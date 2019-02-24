@@ -4,8 +4,8 @@ import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { map, mergeMap } from 'rxjs/operators';
 
-import * as UserStoreActions from './actions';
 import { UserService } from '../../services/user.service';
+import * as UserStoreActions from './actions';
 
 @Injectable()
 export class UserEffects {

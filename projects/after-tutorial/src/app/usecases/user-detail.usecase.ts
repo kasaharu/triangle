@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
-import { map, takeUntil, distinctUntilChanged } from 'rxjs/operators';
+import { distinctUntilChanged, map, takeUntil } from 'rxjs/operators';
 
 import { Store } from '../services/store.service';
 import { UserApiService } from '../services/user-api.service';

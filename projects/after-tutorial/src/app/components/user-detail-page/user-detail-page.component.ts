@@ -1,4 +1,4 @@
-import { Component, OnDestroy, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { UserDetailUsecase } from '../../usecases/user-detail.usecase';

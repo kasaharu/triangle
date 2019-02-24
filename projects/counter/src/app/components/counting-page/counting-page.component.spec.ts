@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { Store } from '@ngrx/store';
 
-import { RootStoreModule, RootStoreState, CounterStoreActions } from '../../root-store';
+import { CounterStoreActions, RootStoreModule, RootStoreState } from '../../root-store';
 import { CountingPageComponent } from './counting-page.component';
 
 describe('CountingPageComponent', () => {

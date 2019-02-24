@@ -1,7 +1,7 @@
-import { FetchListRequestAction, FetchListSuccessAction, FetchDetailRequestAction, FetchDetailSuccessAction } from './actions';
+import { User } from '../../core/models';
+import { FetchDetailRequestAction, FetchDetailSuccessAction, FetchListRequestAction, FetchListSuccessAction } from './actions';
 import { userReducer } from './reducers';
 import { initialState } from './state';
-import { User } from '../../core/models';
 
 describe('userReducer', () => {
   const user: User = {
