@@ -6,9 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReadComponent } from './pages/read/read.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ReadComponent],
+  declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
