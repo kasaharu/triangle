@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Book } from '../../core/domains';
 
 @Component({
   selector: 'canaria-book-list',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.scss'],
 })
 export class BookListComponent implements OnInit {
+  @Input()
+  bookList: Book[];
   constructor() {}
 
   ngOnInit() {}

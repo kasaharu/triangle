@@ -1,3 +1,5 @@
-<p>
-  book-list works!
-</p>
+<ul>
+  <ng-container *ngFor="let book of bookList">
+    <li>{{ book.id }}: {{ book.name }}</li>
+  </ng-container>
+</ul>
