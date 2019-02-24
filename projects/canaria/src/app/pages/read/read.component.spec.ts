@@ -8,9 +8,8 @@ describe('ReadComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ReadComponent ]
-    })
-    .compileComponents();
+      declarations: [ReadComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
