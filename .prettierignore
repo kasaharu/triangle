@@ -2,3 +2,4 @@ dist/
 coverage/
 node_modules/
 storybook-static/
+assets/stylesheets/reset.css

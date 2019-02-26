@@ -695,6 +695,8 @@
               "projects/canaria/src/assets"
             ],
             "styles": [
+              "assets/stylesheets/reset.css",
+              "assets/stylesheets/normalize.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "projects/canaria/src/styles.scss"
             ],
@@ -753,6 +755,8 @@
             "tsConfig": "projects/canaria/tsconfig.spec.json",
             "karmaConfig": "projects/canaria/karma.conf.js",
             "styles": [
+              "assets/stylesheets/reset.css",
+              "assets/stylesheets/normalize.css",
               "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "projects/canaria/src/styles.scss"
             ],
