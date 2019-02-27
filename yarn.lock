@@ -1076,21 +1076,25 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@ngrx/effects@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-7.2.0.tgz#8aa318ac247d8e9a428625562a124a6463e3ee2f"
+"@ngrx/effects@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-7.3.0.tgz#9bc3d58c7e6c810083870b3cd84bfe339847c5c0"
+  integrity sha512-PxZQaKTUmdsTPpd/0vCbYmVn8KtnvlmMDv4GflU7TVhZPe8uibaPN4HNkJMZD2gPe6qk3R7wGwuyXlFWBeQiUw==
 
-"@ngrx/entity@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-7.2.0.tgz#b8de8fd6fb39b87eb4187a9768e39e2862e35669"
+"@ngrx/entity@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-7.3.0.tgz#733f91d53c25244d23d2518a13e8b41cdbb3c5b5"
+  integrity sha512-Ox2V0FlzRsJr7mquyiaF1SrXwIciXJuFJuHu+hCHdpai1apTwXWIPM3j36VU42AeOX6kSQXNmCsf5JOOv4vKFA==
 
-"@ngrx/store-devtools@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-7.2.0.tgz#91e2287f0d67d4e79c51bd3d649a5013e71bbcad"
+"@ngrx/store-devtools@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-7.3.0.tgz#a178e66083343d81e554cfc092101f5bf8311908"
+  integrity sha512-//zuFcXUEJO3H/KfT3ontsosdF+dBphvoT4NHHZQAewaGUmn/z6OqgJv41n0d8NmAjVmKYYA73jtWwRmfSHTcA==
 
-"@ngrx/store@7.2.0":
-  version "7.2.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.2.0.tgz#b22200fd48b721afe0e5cc9eec92f3dc31c078b1"
+"@ngrx/store@7.3.0":
+  version "7.3.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.3.0.tgz#12684cef59765f161d0152b12a6caad63dbb832a"
+  integrity sha512-cELOO+kHYo100Q2wi1cZqhK9jA/NJs5//0lkphoR/AKxShGmJCkub6L+qnJCrzROu4Bvod4DAlA9VAQSq4EYLg==
 
 "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
