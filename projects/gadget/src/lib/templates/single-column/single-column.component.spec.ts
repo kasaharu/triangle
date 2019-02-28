@@ -8,9 +8,8 @@ describe('SingleColumnComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SingleColumnComponent ],
-    })
-    .compileComponents();
+      declarations: [SingleColumnComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
