@@ -8,7 +8,7 @@ describe('SingleColumnComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SingleColumnComponent ]
+      declarations: [ SingleColumnComponent ],
     })
     .compileComponents();
   }));
