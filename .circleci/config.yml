@@ -31,7 +31,7 @@ jobs:
       - save_cache:
           key: canaria-mock-v1-{{ checksum "yarn.lock" }}
           paths:
-            - node_modules/
+            - canaria-mock-server/node_modules/
 
   build-lib:
     docker:
