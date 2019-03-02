@@ -3,3 +3,10 @@ coverage/
 node_modules/
 storybook-static/
 assets/stylesheets/reset.css
+
+projects/counter/
+projects/counter-e2e/
+projects/gh-render-e2e/
+projects/gh-render/
+projects/todo-manager-e2e/
+projects/todo-manager/

@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px;
+}
+
+.sidemenu {
+  flex-basis: 300px;
+}
+
+.main {
+  flex: 1;
+  margin-left: 16px;
+}
