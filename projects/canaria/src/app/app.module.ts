@@ -10,9 +10,10 @@ import { BookListComponent } from './components/book-list/book-list.component';
 import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReadComponent } from './pages/read/read.component';
+import { ReadingComponent } from './pages/reading/reading.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent],
+  declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent, ReadingComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
