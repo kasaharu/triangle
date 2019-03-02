@@ -1,9 +1,11 @@
 .book-list {
   border: 1px solid #e6ecf0;
+  height: 680px;
+  overflow: scroll;
 }
 
 .book-item {
-  height: 48px;
-  line-height: 48px;
+  height: 54px;
+  line-height: 54px;
   border-bottom: 1px solid #e6ecf0;
 }
