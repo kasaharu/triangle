@@ -7,4 +7,5 @@ export interface Book {
   id: number;
   name: string;
   type: BookType;
+  isFavorite: boolean;
 }
