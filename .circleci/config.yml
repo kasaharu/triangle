@@ -297,15 +297,15 @@ workflows:
       - build-canaria:
           requires:
             - build-lib
-      - build-cnt:
-          requires:
-            - build-lib
+      # - build-cnt:
+      #     requires:
+      #       - build-lib
       - build-anytn:
           requires:
             - build-lib
-      - build-at:
-          requires:
-            - build-lib
+      # - build-at:
+      #     requires:
+      #       - build-lib
       - build-storybook:
           requires:
             - build-lib
@@ -321,15 +321,15 @@ workflows:
       - test-canaria:
           requires:
             - build-canaria
-      - test-cnt:
-          requires:
-            - build-cnt
+      # - test-cnt:
+      #     requires:
+      #       - build-cnt
       - test-anytn:
           requires:
             - build-anytn
-      - test-at:
-          requires:
-            - build-at
+      # - test-at:
+      #     requires:
+      #       - build-at
       # - e2e-gh:
       #     requires:
       #       - build-gh
@@ -339,12 +339,12 @@ workflows:
       - e2e-canaria:
           requires:
             - build-canaria
-      - e2e-cnt:
-          requires:
-            - build-cnt
+      # - e2e-cnt:
+      #     requires:
+      #       - build-cnt
       - e2e-anytn:
           requires:
             - build-anytn
-      - e2e-at:
-          requires:
-            - build-at
+      # - e2e-at:
+      #     requires:
+      #       - build-at
