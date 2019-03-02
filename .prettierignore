@@ -4,6 +4,8 @@ node_modules/
 storybook-static/
 assets/stylesheets/reset.css
 
+projects/after-tutorial/
+projects/after-tutorial-e2e/
 projects/counter/
 projects/counter-e2e/
 projects/gh-render-e2e/
