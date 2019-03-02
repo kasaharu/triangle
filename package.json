@@ -58,6 +58,7 @@
     "@angular/platform-browser": "7.2.7",
     "@angular/platform-browser-dynamic": "7.2.7",
     "@angular/router": "7.2.7",
+    "@nestjs/cli": "^5.8.0",
     "@ngrx/effects": "7.3.0",
     "@ngrx/entity": "7.3.0",
     "@ngrx/store": "7.3.0",
