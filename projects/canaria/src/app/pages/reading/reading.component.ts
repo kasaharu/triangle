@@ -1,15 +1,40 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, of } from 'rxjs';
+
+import { Book, BookType } from '../../core/domains';
 
 @Component({
   selector: 'canaria-reading',
   templateUrl: './reading.component.html',
-  styleUrls: ['./reading.component.scss']
+  styleUrls: ['./reading.component.scss'],
 })
 export class ReadingComponent implements OnInit {
+  bookList$: Observable<Book[]>;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    this.bookList$ = of([
+      { id: 101, name: 'book101', type: BookType.READING },
+      { id: 102, name: 'book102', type: BookType.READING },
+      { id: 103, name: 'book103', type: BookType.READING },
+      { id: 104, name: 'book104', type: BookType.READING },
+      { id: 105, name: 'book105', type: BookType.READING },
+      { id: 106, name: 'book106', type: BookType.READING },
+      { id: 107, name: 'book107', type: BookType.READING },
+      { id: 108, name: 'book108', type: BookType.READING },
+      { id: 109, name: 'book109', type: BookType.READING },
+      { id: 110, name: 'book110', type: BookType.READING },
+      { id: 111, name: 'book111', type: BookType.READING },
+      { id: 112, name: 'book112', type: BookType.READING },
+      { id: 113, name: 'book113', type: BookType.READING },
+      { id: 114, name: 'book114', type: BookType.READING },
+      { id: 115, name: 'book115', type: BookType.READING },
+      { id: 116, name: 'book116', type: BookType.READING },
+      { id: 117, name: 'book117', type: BookType.READING },
+      { id: 118, name: 'book118', type: BookType.READING },
+      { id: 119, name: 'book119', type: BookType.READING },
+      { id: 120, name: 'book120', type: BookType.READING },
+    ]);
   }
-
 }
