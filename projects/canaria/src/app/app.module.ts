@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { GadgetModule } from 'gadget';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BookListComponent } from './components/book-list/book-list.component';
@@ -11,7 +13,7 @@ import { ReadComponent } from './pages/read/read.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, NavigationComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
 })
