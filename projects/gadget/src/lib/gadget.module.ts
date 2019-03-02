@@ -12,6 +12,6 @@ const routes: Routes = [];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   declarations: [GadgetComponent, ButtonComponent, LinkComponent, SingleColumnComponent, HeaderComponent, TwoColumnsComponent],
-  exports: [GadgetComponent, ButtonComponent, LinkComponent, HeaderComponent, SingleColumnComponent],
+  exports: [GadgetComponent, ButtonComponent, LinkComponent, HeaderComponent, SingleColumnComponent, TwoColumnsComponent],
 })
 export class GadgetModule {}
