@@ -17,6 +17,21 @@ jobs:
           key: triangle-v1-{{ checksum "yarn.lock" }}
           paths:
             - node_modules/
+  install-packages-for-mock:
+    docker:
+      - image: circleci/node:8.15.1-stretch-browsers
+    steps:
+      - checkout
+      - run: echo "Start installing the packages for mock server"
+      - restore_cache:
+          key: canaria-mock-v1-{{ checksum "yarn.lock" }}
+      - run:
+          working_directory: canaria-mock-server
+          command: yarn install
+      - save_cache:
+          key: canaria-mock-v1-{{ checksum "yarn.lock" }}
+          paths:
+            - node_modules/
 
   build-lib:
     docker:
@@ -274,15 +289,19 @@ workflows:
   build_and_test:
     jobs:
       - install-packages
+      - install-packages-for-mock
       - lint:
           requires:
             - install-packages
+            - install-packages-for-mock
       - stylelint:
           requires:
             - install-packages
+            - install-packages-for-mock
       - format-check:
           requires:
             - install-packages
+            - install-packages-for-mock
       - build-lib:
           requires:
             - lint
