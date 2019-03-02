@@ -50,6 +50,8 @@ jobs:
       - run: echo "Start build for Storybook"
       - restore_cache:
           key: triangle-v1-{{ checksum "yarn.lock" }}
+      - restore_cache:
+          key: canaria-mock-v1-{{ checksum "yarn.lock" }}
       - run: yarn lib:build
       - run: yarn build-storybook
       - store_artifacts:
