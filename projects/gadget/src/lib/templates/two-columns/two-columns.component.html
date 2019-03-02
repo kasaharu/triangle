@@ -1,3 +1,9 @@
-<p>
-  two-columns works!
-</p>
+<ng-content select="gad-header"></ng-content>
+<div class="wrapper">
+  <div class="sidemenu">
+    <ng-content select=".sidemenu"></ng-content>
+  </div>
+  <main class="main">
+    <ng-content></ng-content>
+  </main>
+</div>

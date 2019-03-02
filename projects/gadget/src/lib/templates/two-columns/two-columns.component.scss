@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sidemenu {
+  border: 1px solid;
+  flex-basis: 300px;
+}
+
+.main {
+  flex: 1;
+}
