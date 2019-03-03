@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,7 +15,7 @@ import { ReadingComponent } from './pages/reading/reading.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent, ReadingComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, GadgetModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
 })
