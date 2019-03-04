@@ -38,4 +38,9 @@ export class BooksController {
   fetchAll() {
     return this.bookList;
   }
+
+  @Get('/read')
+  findReadBookList() {
+    return this.bookList.filter(book => book.type === BookType.READ);
+  }
 }
