@@ -732,7 +732,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "canaria:build"
+            "browserTarget": "canaria:build",
+            "proxyConfig": "projects/canaria/src/proxy.conf.json"
           },
           "configurations": {
             "production": {
