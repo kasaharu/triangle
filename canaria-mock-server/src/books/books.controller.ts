@@ -7,9 +7,10 @@ export enum BookType {
 
 @Controller('books')
 export class BooksController {
-  @Get()
-  fetchAll() {
-    return [
+  bookList;
+
+  constructor() {
+    this.bookList = [
       { id: 1, name: 'book1', type: BookType.READ, isFavorite: false },
       { id: 2, name: 'book2', type: BookType.READ, isFavorite: false },
       { id: 3, name: 'book3', type: BookType.READ, isFavorite: false },
@@ -31,5 +32,10 @@ export class BooksController {
       { id: 19, name: 'book19', type: BookType.READ, isFavorite: true },
       { id: 20, name: 'book20', type: BookType.READ, isFavorite: true },
     ];
+  }
+
+  @Get()
+  fetchAll() {
+    return this.bookList;
   }
 }
