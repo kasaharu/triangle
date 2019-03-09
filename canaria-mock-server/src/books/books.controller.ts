@@ -1,4 +1,12 @@
-import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 
 import { BooksService } from './books.service';
 
@@ -57,5 +65,13 @@ export class BooksController {
       }
     });
     return `This action updates a #${id} book`;
+  }
+
+  // curl -X DELETE -H "Content-Type: application/json" http://localhost:3000/books/2
+  @Delete(':id')
+  delete(@Param('id') id) {
+    const cloneBookList = this.bookList;
+    this.bookList = cloneBookList.filter(book => book.id !== +id);
+    return `This action removes a #${id} book`;
   }
 }
