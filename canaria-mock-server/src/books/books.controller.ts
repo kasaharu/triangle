@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 
 import { BooksService } from './books.service';
 
@@ -19,6 +19,12 @@ export class BooksController {
   @Get()
   fetchAll() {
     return this.bookList;
+  }
+
+  // curl -X GET http://localhost:3000/books/2
+  @Get(':id')
+  find(@Param('id') id) {
+    return this.bookList.find(book => book.id === +id);
   }
 
   // curl -X GET http://localhost:3000/books/read
