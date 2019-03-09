@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Put } from '@nestjs/common';
 
 import { BooksService } from './books.service';
 
@@ -46,5 +46,16 @@ export class BooksController {
     const newItem = { ...body, id: newId };
     this.bookList.push(newItem);
     return `This action adds a new book : id ${newId}`;
+  }
+
+  // curl -X PUT -H "Content-Type: application/json" http://localhost:3000/books/3 -d '{ "name": "book103" }'
+  @Put(':id')
+  update(@Param('id') id, @Body() body) {
+    this.bookList.forEach(book => {
+      if (book.id === +id) {
+        book.name = body.name;
+      }
+    });
+    return `This action updates a #${id} book`;
   }
 }
