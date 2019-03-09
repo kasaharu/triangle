@@ -9,11 +9,7 @@ import {
 } from '@nestjs/common';
 
 import { BooksService } from './books.service';
-
-export enum BookType {
-  READ = 'READ',
-  READING = 'READING',
-}
+import { Book, BookType } from './models';
 
 @Controller('books')
 export class BooksController {
@@ -25,25 +21,25 @@ export class BooksController {
 
   // curl -X GET http://localhost:3000/books
   @Get()
-  fetchAll() {
+  fetchAll(): Book[] {
     return this.bookList;
   }
 
   // curl -X GET http://localhost:3000/books/2
   @Get(':id')
-  find(@Param('id') id) {
+  find(@Param('id') id): Book {
     return this.bookList.find(book => book.id === +id);
   }
 
   // curl -X GET http://localhost:3000/books/read
   @Get('/read')
-  findReadBookList() {
+  findReadBookList(): Book[] {
     return this.bookList.filter(book => book.type === BookType.READ);
   }
 
   // curl -X GET http://localhost:3000/books/reading
   @Get('/reading')
-  findReadingBookList() {
+  findReadingBookList(): Book[] {
     return this.bookList.filter(book => book.type === BookType.READING);
   }
 

@@ -1,13 +1,10 @@
 import { Injectable } from '@nestjs/common';
 
-export enum BookType {
-  READ = 'READ',
-  READING = 'READING',
-}
+import { Book, BookType } from './models';
 
 @Injectable()
 export class BooksService {
-  fetchBookList() {
+  fetchBookList(): Book[] {
     return [
       { id: 1, name: 'book1', type: BookType.READ, isFavorite: false },
       { id: 2, name: 'book2', type: BookType.READ, isFavorite: false },
