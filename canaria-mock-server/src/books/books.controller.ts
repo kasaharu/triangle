@@ -25,12 +25,6 @@ export class BooksController {
     return this.bookList;
   }
 
-  // curl -X GET http://localhost:3000/books/2
-  @Get(':id')
-  find(@Param('id') id): Book {
-    return this.bookList.find(book => book.id === +id);
-  }
-
   // curl -X GET http://localhost:3000/books/read
   @Get('/read')
   findReadBookList(): Book[] {
@@ -41,6 +35,12 @@ export class BooksController {
   @Get('/reading')
   findReadingBookList(): Book[] {
     return this.bookList.filter(book => book.type === BookType.READING);
+  }
+
+  // curl -X GET http://localhost:3000/books/2
+  @Get(':id')
+  find(@Param('id') id): Book {
+    return this.bookList.find(book => book.id === +id);
   }
 
   // curl -X POST -H "Content-Type: application/json" http://localhost:3000/books -d '{ "name": "book41", "type": "READ", "isFavorite": true }'
