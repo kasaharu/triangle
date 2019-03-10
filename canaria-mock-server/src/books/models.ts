@@ -6,6 +6,7 @@ export interface Book {
 }
 
 export enum BookType {
+  NONE = 'NONE',
   READ = 'READ',
   READING = 'READING',
 }
