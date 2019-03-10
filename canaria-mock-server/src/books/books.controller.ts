@@ -1,35 +1,73 @@
-import { Controller, Get } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Delete,
+  Get,
+  Param,
+  Post,
+  Put,
+} from '@nestjs/common';
 
-export enum BookType {
-  READ = 'READ',
-  READING = 'READING',
-}
+import { BooksService } from './books.service';
+import { Book, BookType } from './models';
 
 @Controller('books')
 export class BooksController {
+  bookList;
+
+  constructor(private booksService: BooksService) {
+    this.bookList = this.booksService.fetchBookList();
+  }
+
+  // curl -X GET http://localhost:3000/books
   @Get()
-  fetchAll() {
-    return [
-      { id: 1, name: 'book1', type: BookType.READ, isFavorite: false },
-      { id: 2, name: 'book2', type: BookType.READ, isFavorite: false },
-      { id: 3, name: 'book3', type: BookType.READ, isFavorite: false },
-      { id: 4, name: 'book4', type: BookType.READ, isFavorite: false },
-      { id: 5, name: 'book5', type: BookType.READ, isFavorite: false },
-      { id: 6, name: 'book6', type: BookType.READ, isFavorite: false },
-      { id: 7, name: 'book7', type: BookType.READ, isFavorite: false },
-      { id: 8, name: 'book8', type: BookType.READ, isFavorite: false },
-      { id: 9, name: 'book9', type: BookType.READ, isFavorite: false },
-      { id: 10, name: 'book10', type: BookType.READ, isFavorite: true },
-      { id: 11, name: 'book11', type: BookType.READ, isFavorite: true },
-      { id: 12, name: 'book12', type: BookType.READ, isFavorite: true },
-      { id: 13, name: 'book13', type: BookType.READ, isFavorite: true },
-      { id: 14, name: 'book14', type: BookType.READ, isFavorite: true },
-      { id: 15, name: 'book15', type: BookType.READ, isFavorite: true },
-      { id: 16, name: 'book16', type: BookType.READ, isFavorite: true },
-      { id: 17, name: 'book17', type: BookType.READ, isFavorite: true },
-      { id: 18, name: 'book18', type: BookType.READ, isFavorite: true },
-      { id: 19, name: 'book19', type: BookType.READ, isFavorite: true },
-      { id: 20, name: 'book20', type: BookType.READ, isFavorite: true },
-    ];
+  fetchAll(): Book[] {
+    return this.bookList;
+  }
+
+  // curl -X GET http://localhost:3000/books/read
+  @Get('/read')
+  findReadBookList(): Book[] {
+    return this.bookList.filter(book => book.type === BookType.READ);
+  }
+
+  // curl -X GET http://localhost:3000/books/reading
+  @Get('/reading')
+  findReadingBookList(): Book[] {
+    return this.bookList.filter(book => book.type === BookType.READING);
+  }
+
+  // curl -X GET http://localhost:3000/books/2
+  @Get(':id')
+  find(@Param('id') id): Book {
+    return this.bookList.find(book => book.id === +id);
+  }
+
+  // curl -X POST -H "Content-Type: application/json" http://localhost:3000/books -d '{ "name": "book41", "type": "READ", "isFavorite": true }'
+  @Post()
+  create(@Body() body) {
+    const newId = this.bookList.length + 1;
+    const newItem = { ...body, id: newId };
+    this.bookList.push(newItem);
+    return `This action adds a new book : id ${newId}`;
+  }
+
+  // curl -X PUT -H "Content-Type: application/json" http://localhost:3000/books/3 -d '{ "name": "book103" }'
+  @Put(':id')
+  update(@Param('id') id, @Body() body) {
+    this.bookList.forEach(book => {
+      if (book.id === +id) {
+        book.name = body.name;
+      }
+    });
+    return `This action updates a #${id} book`;
+  }
+
+  // curl -X DELETE -H "Content-Type: application/json" http://localhost:3000/books/2
+  @Delete(':id')
+  delete(@Param('id') id) {
+    const cloneBookList = this.bookList;
+    this.bookList = cloneBookList.filter(book => book.id !== +id);
+    return `This action removes a #${id} book`;
   }
 }
