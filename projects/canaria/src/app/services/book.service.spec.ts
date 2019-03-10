@@ -20,13 +20,25 @@ describe('BookService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('call fetchBookList() method', () => {
+  it('call fetchReadBookList() method', () => {
     const testBookList: Book[] = [{ id: 1, name: 'test-book', type: BookType.READ, isFavorite: true }];
 
     const service: BookService = TestBed.get(BookService);
-    service.fetchBookList().subscribe((bookList) => expect(bookList).toEqual(testBookList));
+    service.fetchReadBookList().subscribe((bookList) => expect(bookList).toEqual(testBookList));
 
-    const req = httpTestingController.expectOne('api/books');
+    const req = httpTestingController.expectOne('api/books/read');
+    expect(req.request.method).toEqual('GET');
+    req.flush(testBookList);
+    httpTestingController.verify();
+  });
+
+  it('call fetchReadingBookList() method', () => {
+    const testBookList: Book[] = [{ id: 1, name: 'test-book', type: BookType.READ, isFavorite: true }];
+
+    const service: BookService = TestBed.get(BookService);
+    service.fetchReadingBookList().subscribe((bookList) => expect(bookList).toEqual(testBookList));
+
+    const req = httpTestingController.expectOne('api/books/reading');
     expect(req.request.method).toEqual('GET');
     req.flush(testBookList);
     httpTestingController.verify();
