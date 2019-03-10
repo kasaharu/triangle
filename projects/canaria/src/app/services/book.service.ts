@@ -12,7 +12,7 @@ export class BookService {
 
   constructor(private http: HttpClient) {}
 
-  fetchBookList(): Observable<Book[]> {
-    return this.http.get<Book[]>(this.booksUrl);
+  fetchReadBookList(): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.booksUrl}/read`);
   }
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 
-import { Book, BookType } from '../../core/domains';
+import { Book } from '../../core/domains';
 import { BookService } from '../../services/book.service';
 
 @Component({
@@ -14,6 +14,6 @@ export class ReadComponent implements OnInit {
   constructor(private bookService: BookService) {}
 
   ngOnInit() {
-    this.bookList$ = this.bookService.fetchBookList();
+    this.bookList$ = this.bookService.fetchReadBookList();
   }
 }
