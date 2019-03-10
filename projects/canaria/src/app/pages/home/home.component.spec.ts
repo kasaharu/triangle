@@ -28,8 +28,8 @@ describe('HomeComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('createNewBook', () => {
-    component.createNewBook();
+  it('clickNewBookButton', () => {
+    component.clickNewBookButton();
     expect(router.navigate).toHaveBeenCalledWith(['/new']);
   });
 });

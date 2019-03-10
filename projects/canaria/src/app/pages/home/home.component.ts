@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {}
 
-  createNewBook() {
+  clickNewBookButton() {
     this.router.navigate(['/new']);
   }
 }
