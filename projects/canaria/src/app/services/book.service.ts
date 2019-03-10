@@ -15,4 +15,8 @@ export class BookService {
   fetchReadBookList(): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.booksUrl}/read`);
   }
+
+  fetchReadingBookList(): Observable<Book[]> {
+    return this.http.get<Book[]>(`${this.booksUrl}/reading`);
+  }
 }
