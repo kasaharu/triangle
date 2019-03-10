@@ -12,9 +12,10 @@ import { SidemenuComponent } from './components/sidemenu/sidemenu.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ReadComponent } from './pages/read/read.component';
 import { ReadingComponent } from './pages/reading/reading.component';
+import { NewComponent } from './pages/new/new.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent, ReadingComponent],
+  declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent, ReadingComponent, NewComponent],
   imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
