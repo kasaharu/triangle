@@ -1,5 +1,6 @@
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -16,7 +17,7 @@ import { NewComponent } from './pages/new/new.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent, ReadingComponent, NewComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, GadgetModule],
+  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, GadgetModule],
   providers: [],
   bootstrap: [AppComponent],
 })
