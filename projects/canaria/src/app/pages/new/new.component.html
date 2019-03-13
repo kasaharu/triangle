@@ -1,14 +1,15 @@
 <form [formGroup]="bookForm">
-  <input type="text" formControlName="name" />
-  <select id="type" formControlName="type">
-    <option *ngFor="let bookType of bookTypeList" [ngValue]="bookType">{{ bookType }}</option>
-  </select>
-  <label>
-    <input type="radio" value="true" formControlName="isFavorite" />
-    <span>true</span>
-  </label>
-  <label>
-    <input type="radio" value="false" formControlName="isFavorite" />
-    <span>false</span>
-  </label>
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Input" formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-select formControlName="type" placeholder="Select">
+        <mat-option [value]="bookType" *ngFor="let bookType of bookTypeList">
+          {{ bookType }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-checkbox formControlName="isFavorite">isFavorite</mat-checkbox>
+  </div>
 </form>

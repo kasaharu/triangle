@@ -14,9 +14,9 @@ export class NewComponent implements OnInit {
 
   constructor(private fb: FormBuilder) {
     this.bookForm = this.fb.group({
-      name: ['hoge'],
+      name: [''],
       type: [this.bookTypeList[0]],
-      isFavorite: ['true'],
+      isFavorite: [true],
     });
   }
 

@@ -3,6 +3,10 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 import { GadgetModule } from 'gadget';
 
@@ -17,7 +21,18 @@ import { NewComponent } from './pages/new/new.component';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, ReadComponent, BookListComponent, SidemenuComponent, ReadingComponent, NewComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, GadgetModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    GadgetModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
