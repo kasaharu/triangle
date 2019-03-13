@@ -696,7 +696,7 @@
             ],
             "styles": [
               "assets/stylesheets/reset.css",
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/canaria/src/styles.scss"
             ],
             "scripts": [],
@@ -756,7 +756,7 @@
             "karmaConfig": "projects/canaria/karma.conf.js",
             "styles": [
               "assets/stylesheets/reset.css",
-              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/canaria/src/styles.scss"
             ],
             "scripts": [],
