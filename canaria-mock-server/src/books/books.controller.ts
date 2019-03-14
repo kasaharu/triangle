@@ -49,7 +49,7 @@ export class BooksController {
     const newId = this.bookList.length + 1;
     const newItem = { ...body, id: newId };
     this.bookList.push(newItem);
-    return `This action adds a new book : id ${newId}`;
+    return this.bookList;
   }
 
   // curl -X PUT -H "Content-Type: application/json" http://localhost:3000/books/3 -d '{ "name": "book103" }'
