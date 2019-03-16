@@ -25,6 +25,6 @@ export class NewComponent implements OnInit {
 
   clickButton() {
     // tslint:disable-next-line: no-console
-    this.bookService.registNewBook(this.bookForm.value).subscribe(res => console.log(res));
+    this.bookService.registNewBook(this.bookForm.value).subscribe((res) => console.log(res));
   }
 }
