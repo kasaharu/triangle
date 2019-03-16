@@ -35,7 +35,7 @@ jobs:
 
   build-lib:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for gadget"
@@ -44,7 +44,7 @@ jobs:
       - run: yarn lib:build
   build-storybook:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for Storybook"
@@ -58,7 +58,7 @@ jobs:
           path: storybook-static
   build-gh:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for gh-render"
@@ -68,7 +68,7 @@ jobs:
       - run: yarn gh:build
   build-tm:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for todo-manager"
@@ -78,7 +78,7 @@ jobs:
       - run: yarn tm:build
   build-canaria:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for canaria"
@@ -88,7 +88,7 @@ jobs:
       - run: yarn canaria:build
   build-cnt:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for counter"
@@ -98,7 +98,7 @@ jobs:
       - run: yarn cnt:build
   build-anytn:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for anything"
@@ -108,7 +108,7 @@ jobs:
       - run: yarn anytn:build
   build-at:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start build for after tutorial"
@@ -118,7 +118,7 @@ jobs:
       - run: yarn at:build
   lint:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start lint"
@@ -127,7 +127,7 @@ jobs:
       - run: yarn lint
   stylelint:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start stylelint"
@@ -136,7 +136,7 @@ jobs:
       - run: yarn stylelint
   format-check:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start format-check"
@@ -145,7 +145,7 @@ jobs:
       - run: yarn prettier:check
   test-lib:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for gadget"
@@ -156,7 +156,7 @@ jobs:
           path: coverage
   test-gh:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for gh-render"
@@ -168,7 +168,7 @@ jobs:
           path: coverage
   test-tm:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for todo-manager"
@@ -180,7 +180,7 @@ jobs:
           path: coverage
   test-canaria:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for canaria"
@@ -192,7 +192,7 @@ jobs:
           path: coverage
   test-cnt:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for counter"
@@ -204,7 +204,7 @@ jobs:
           path: coverage
   test-anytn:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for anything"
@@ -216,7 +216,7 @@ jobs:
           path: coverage
   test-at:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start test for after tutorial"
@@ -228,7 +228,7 @@ jobs:
           path: coverage
   e2e-gh:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-gh"
@@ -238,7 +238,7 @@ jobs:
       - run: yarn gh:e2e
   e2e-tm:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start tm:e2e"
@@ -248,7 +248,7 @@ jobs:
       - run: yarn tm:e2e
   e2e-canaria:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-canaria"
@@ -258,7 +258,7 @@ jobs:
       - run: yarn canaria:e2e
   e2e-cnt:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-cnt"
@@ -268,7 +268,7 @@ jobs:
       - run: yarn cnt:e2e
   e2e-anytn:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-anytn"
@@ -278,7 +278,7 @@ jobs:
       - run: yarn anytn:e2e
   e2e-at:
     docker:
-      - image: circleci/node:8.14.0-stretch-browsers
+      - image: circleci/node:8.15.1-stretch-browsers
     steps:
       - checkout
       - run: echo "Start e2e-after-tutorial"
