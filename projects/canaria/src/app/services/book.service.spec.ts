@@ -1,4 +1,4 @@
-import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
+import { HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
 import { Book, BookStatus } from '../core/domains';
@@ -8,9 +8,7 @@ describe('BookService', () => {
   let httpTestingController: HttpTestingController;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule],
-    });
+    TestBed.configureTestingModule({});
 
     httpTestingController = TestBed.get(HttpTestingController);
   });
