@@ -1,5 +1,10 @@
 <ul class="book-list">
   <ng-container *ngFor="let book of bookList">
-    <li class="book-item">{{ book.id }}: {{ book.name }}</li>
+    <li class="book-item">
+      <p class="item-id">{{ book.id }}</p>
+      <p class="item-name">{{ book.name }}</p>
+      <p class="item-status">{{ book.type }}</p>
+      <p class="item-favorite">{{ book.isFavorite }}</p>
+    </li>
   </ng-container>
 </ul>
