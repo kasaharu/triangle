@@ -41,4 +41,17 @@ describe('BookService', () => {
     req.flush(testBookList);
     httpTestingController.verify();
   });
+
+  it('call registNewBook() method', () => {
+    const testBookList: Book[] = [{ id: 1, name: 'test-book', status: BookStatus.READ, isFavorite: true }];
+    const newBook = { name: 'new-book', status: BookStatus.NONE, isFavorite: true };
+
+    const service: BookService = TestBed.get(BookService);
+    service.registNewBook(newBook).subscribe((bookList) => expect(bookList).toEqual(testBookList));
+
+    const req = httpTestingController.expectOne('api/books');
+    expect(req.request.method).toEqual('POST');
+    req.flush(testBookList);
+    httpTestingController.verify();
+  });
 });

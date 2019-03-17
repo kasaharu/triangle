@@ -24,7 +24,7 @@ export class BookService {
     return this.http.get<Book[]>(`${this.booksUrl}/reading`);
   }
 
-  registNewBook(book): Observable<Book[]> {
+  registNewBook(book: Book): Observable<Book[]> {
     return this.http.post<Book[]>(`${this.booksUrl}`, book, this.httpOptions);
   }
 }
