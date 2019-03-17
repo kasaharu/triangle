@@ -8,4 +8,22 @@
   height: 54px;
   line-height: 54px;
   border-bottom: 1px solid #e6ecf0;
+  letter-spacing: 1px;
+  display: flex;
+}
+
+.item-id {
+  flex: 10%;
+}
+
+.item-name {
+  flex: 40%;
+}
+
+.item-status {
+  flex: 30%;
+}
+
+.item-favorite {
+  flex: 20%;
 }

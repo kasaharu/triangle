@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 
 import { BooksService } from './books.service';
-import { Book, BookType } from './models';
+import { Book, BookStatus } from './models';
 
 @Controller('books')
 export class BooksController {
@@ -28,13 +28,13 @@ export class BooksController {
   // curl -X GET http://localhost:3000/books/read
   @Get('/read')
   findReadBookList(): Book[] {
-    return this.bookList.filter(book => book.type === BookType.READ);
+    return this.bookList.filter(book => book.status === BookStatus.READ);
   }
 
   // curl -X GET http://localhost:3000/books/reading
   @Get('/reading')
   findReadingBookList(): Book[] {
-    return this.bookList.filter(book => book.type === BookType.READING);
+    return this.bookList.filter(book => book.status === BookStatus.READING);
   }
 
   // curl -X GET http://localhost:3000/books/2
@@ -43,13 +43,13 @@ export class BooksController {
     return this.bookList.find(book => book.id === +id);
   }
 
-  // curl -X POST -H "Content-Type: application/json" http://localhost:3000/books -d '{ "name": "book41", "type": "READ", "isFavorite": true }'
+  // curl -X POST -H "Content-Type: application/json" http://localhost:3000/books -d '{ "name": "book41", "status": "READ", "isFavorite": true }'
   @Post()
   create(@Body() body) {
     const newId = this.bookList.length + 1;
     const newItem = { ...body, id: newId };
     this.bookList.push(newItem);
-    return `This action adds a new book : id ${newId}`;
+    return this.bookList;
   }
 
   // curl -X PUT -H "Content-Type: application/json" http://localhost:3000/books/3 -d '{ "name": "book103" }'

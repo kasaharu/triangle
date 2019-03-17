@@ -42,8 +42,8 @@
     "stylelint": "stylelint 'src/**/*.scss' 'projects/**/*.scss'",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "prettier": "prettier --write './**/*.{ts,html,scss}'",
-    "prettier:check": "prettier --check './**/*.{ts,html,scss}'"
+    "prettier": "prettier --write 'projects/**/*.{ts,html,scss}'",
+    "prettier:check": "prettier --check 'projects/**/*.{ts,html,scss}'"
   },
   "private": true,
   "dependencies": {

@@ -1,11 +1,11 @@
 export interface Book {
   id: number;
   name: string;
-  type: BookType;
+  status: BookStatus;
   isFavorite: boolean;
 }
 
-export enum BookType {
+export enum BookStatus {
   NONE = 'NONE',
   READ = 'READ',
   READING = 'READING',

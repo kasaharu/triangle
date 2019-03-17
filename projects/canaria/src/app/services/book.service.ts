@@ -1,7 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-
 import { Book } from '../core/domains';
 
 @Injectable({
@@ -9,6 +8,11 @@ import { Book } from '../core/domains';
 })
 export class BookService {
   readonly booksUrl = 'api/books';
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+    }),
+  };
 
   constructor(private http: HttpClient) {}
 
@@ -18,5 +22,9 @@ export class BookService {
 
   fetchReadingBookList(): Observable<Book[]> {
     return this.http.get<Book[]>(`${this.booksUrl}/reading`);
+  }
+
+  registNewBook(book: Book): Observable<Book[]> {
+    return this.http.post<Book[]>(`${this.booksUrl}`, book, this.httpOptions);
   }
 }
