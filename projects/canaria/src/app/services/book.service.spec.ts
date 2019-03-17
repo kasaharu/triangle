@@ -1,7 +1,7 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
 
-import { Book, BookType } from '../core/domains';
+import { Book, BookStatus } from '../core/domains';
 import { BookService } from './book.service';
 
 describe('BookService', () => {
@@ -21,7 +21,7 @@ describe('BookService', () => {
   });
 
   it('call fetchReadBookList() method', () => {
-    const testBookList: Book[] = [{ id: 1, name: 'test-book', type: BookType.READ, isFavorite: true }];
+    const testBookList: Book[] = [{ id: 1, name: 'test-book', status: BookStatus.READ, isFavorite: true }];
 
     const service: BookService = TestBed.get(BookService);
     service.fetchReadBookList().subscribe((bookList) => expect(bookList).toEqual(testBookList));
@@ -33,7 +33,7 @@ describe('BookService', () => {
   });
 
   it('call fetchReadingBookList() method', () => {
-    const testBookList: Book[] = [{ id: 1, name: 'test-book', type: BookType.READ, isFavorite: true }];
+    const testBookList: Book[] = [{ id: 1, name: 'test-book', status: BookStatus.READ, isFavorite: true }];
 
     const service: BookService = TestBed.get(BookService);
     service.fetchReadingBookList().subscribe((bookList) => expect(bookList).toEqual(testBookList));

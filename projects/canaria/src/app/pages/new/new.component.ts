@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
-import { BookType } from '../../core/domains';
+import { BookStatus } from '../../core/domains';
 import { BookService } from '../../services/book.service';
 
 @Component({
@@ -10,13 +10,13 @@ import { BookService } from '../../services/book.service';
   styleUrls: ['./new.component.scss'],
 })
 export class NewComponent implements OnInit {
-  bookTypeList = [BookType.NONE, BookType.READ, BookType.READING];
+  bookStatusList = [BookStatus.NONE, BookStatus.READ, BookStatus.READING];
   bookForm: FormGroup;
 
   constructor(private fb: FormBuilder, private bookService: BookService) {
     this.bookForm = this.fb.group({
       name: [''],
-      type: [this.bookTypeList[0]],
+      status: [this.bookStatusList[0]],
       isFavorite: [true],
     });
   }

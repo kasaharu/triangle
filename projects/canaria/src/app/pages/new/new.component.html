@@ -4,9 +4,9 @@
       <input matInput placeholder="Input" formControlName="name" />
     </mat-form-field>
     <mat-form-field>
-      <mat-select formControlName="type" placeholder="Select">
-        <mat-option [value]="bookType" *ngFor="let bookType of bookTypeList">
-          {{ bookType }}
+      <mat-select formControlName="status" placeholder="Select">
+        <mat-option [value]="bookStatus" *ngFor="let bookStatus of bookStatusList">
+          {{ bookStatus }}
         </mat-option>
       </mat-select>
     </mat-form-field>
