@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { NewComponent } from './new.component';
 
@@ -9,6 +11,8 @@ describe('NewComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NewComponent],
+      imports: [ReactiveFormsModule],
+      schemas: [NO_ERRORS_SCHEMA],
     }).compileComponents();
   }));
 
