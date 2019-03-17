@@ -4,13 +4,14 @@
       <input matInput placeholder="Input" formControlName="name" />
     </mat-form-field>
     <mat-form-field>
-      <mat-select formControlName="status" placeholder="Select">
-        <mat-option [value]="bookStatus" *ngFor="let bookStatus of bookStatusList">
+      <select formControlName="status" placeholder="Select">
+        <option [value]="bookStatus" *ngFor="let bookStatus of bookStatusList">
           {{ bookStatus }}
-        </mat-option>
-      </mat-select>
+        </option>
+      </select>
     </mat-form-field>
-    <mat-checkbox formControlName="isFavorite">isFavorite</mat-checkbox>
+    <input type="checkbox" formControlName="isFavorite" id="bookIsFavorite" />
+    <label for="bookIsFavorite"> isFavorite</label>
   </div>
   <button mat-raised-button color="primary" (click)="clickButton()">登録</button>
 </form>
