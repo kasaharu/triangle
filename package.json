@@ -80,7 +80,7 @@
     "@storybook/addons": "4.1.14",
     "@storybook/angular": "4.1.14",
     "@storybook/cli": "4.1.14",
-    "@types/jasmine": "3.3.10",
+    "@types/jasmine": "3.3.11",
     "@types/jasminewd2": "2.0.6",
     "@types/node": "10.12.24",
     "babel-loader": "8.0.5",
