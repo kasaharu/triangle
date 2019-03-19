@@ -1,6 +1,7 @@
 import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { of } from 'rxjs';
 
 import { Book, BookStatus } from '../../core/domains';
@@ -13,10 +14,12 @@ describe('NewComponent', () => {
   let bookService: BookService;
 
   beforeEach(async(() => {
+    const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
     TestBed.configureTestingModule({
       declarations: [NewComponent],
       imports: [ReactiveFormsModule],
       schemas: [NO_ERRORS_SCHEMA],
+      providers: [{ provide: Router, useValue: routerSpy }],
     }).compileComponents();
 
     bookService = TestBed.get(BookService);
