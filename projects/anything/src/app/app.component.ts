@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     });
   }
 
-  findLastChildRoute(route: ActivatedRouteSnapshot) {
+  findLastChildRoute(route: ActivatedRouteSnapshot): any {
     if (route.firstChild === null) {
       return route;
     }

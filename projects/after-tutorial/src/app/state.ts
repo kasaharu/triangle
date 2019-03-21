@@ -14,7 +14,7 @@ export interface State {
   };
 }
 
-export const initialState = {
+export const initialState: State = {
   userList: {
     items: [],
   },
