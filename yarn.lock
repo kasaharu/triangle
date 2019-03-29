@@ -1234,21 +1234,21 @@
     "@angular-devkit/schematics" "7.2.1"
     typescript "^3.2.2"
 
-"@ngrx/effects@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-7.3.0.tgz#9bc3d58c7e6c810083870b3cd84bfe339847c5c0"
+"@ngrx/effects@7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-7.4.0.tgz#7d1977538cf85e42ab48fd648acdfbc8b52f93d3"
 
-"@ngrx/entity@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-7.3.0.tgz#733f91d53c25244d23d2518a13e8b41cdbb3c5b5"
+"@ngrx/entity@7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-7.4.0.tgz#634cdff1db9629ca0e64c1d6b1e43dc15f4e2ca6"
 
-"@ngrx/store-devtools@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-7.3.0.tgz#a178e66083343d81e554cfc092101f5bf8311908"
+"@ngrx/store-devtools@7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store-devtools/-/store-devtools-7.4.0.tgz#5a73469c70322351c4224f4529c5123f587a5997"
 
-"@ngrx/store@7.3.0":
-  version "7.3.0"
-  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.3.0.tgz#12684cef59765f161d0152b12a6caad63dbb832a"
+"@ngrx/store@7.4.0":
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/@ngrx/store/-/store-7.4.0.tgz#525a343aa45d7f6ca60f3301a23a27669c14bbce"
 
 "@ngtools/json-schema@^1.1.0":
   version "1.1.0"
