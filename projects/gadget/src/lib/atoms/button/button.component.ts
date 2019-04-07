@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -9,13 +9,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class ButtonComponent implements OnInit {
   @Input() innerLabel: string;
   @Input() additionalClass: string;
-  @Output() clickButton = new EventEmitter<boolean>();
 
   constructor() {}
 
   ngOnInit() {}
-
-  handleClickEvent() {
-    this.clickButton.emit(true);
-  }
 }
