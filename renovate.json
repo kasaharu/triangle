@@ -21,6 +21,10 @@
     {
       "packagePatterns": ["^@storybook/", "^@bable/", "babel-loader", "prettier", "stylelint", "stylelint-config-standard"],
       "enabled": true
+    },
+    {
+      "packagePatterns": ["circleci/node"],
+      "enabled": true
     }
   ]
 }
