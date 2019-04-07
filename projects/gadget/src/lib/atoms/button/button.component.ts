@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, HostBinding } from '@angular/core';
+
+export type ColorType = 'primary' | 'danger';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -8,7 +10,15 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ButtonComponent implements OnInit {
   @Input() innerLabel: string;
-  @Input() additionalClass: string;
+  @Input() color: ColorType;
+  @HostBinding('class.is-primary')
+  get classIsPrimary() {
+    return this.color === 'primary';
+  }
+  @HostBinding('class.is-danger')
+  get classIsDanger() {
+    return this.color === 'danger';
+  }
 
   constructor() {}
 

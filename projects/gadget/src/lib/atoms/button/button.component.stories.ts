@@ -10,8 +10,12 @@ storiesOf('Atoms/Button', module)
     }),
   )
   .add(
-    'デフォルト',
+    'index',
     withNotes({ text: 'button タグ' })(() => ({
-      template: `<button gad-button>ボタン</button>`,
+      template: `
+      <button gad-button>Default Button</button>
+      <button gad-button [color]="'primary'">Primary Button</button>
+      <button gad-button [color]="'danger'">Danger Button</button>
+      `,
     })),
   );
