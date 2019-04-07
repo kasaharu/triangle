@@ -17,6 +17,10 @@
     {
       "packagePatterns": ["*"],
       "enabled": false
+    },
+    {
+      "packagePatterns": ["^@storybook/", "^@bable/", "babel-loader", "prettier", "stylelint", "stylelint-config-standard"],
+      "enabled": true
     }
   ]
 }
