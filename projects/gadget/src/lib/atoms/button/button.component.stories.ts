@@ -1,5 +1,5 @@
-import { storiesOf, moduleMetadata } from '@storybook/angular';
 import { withNotes } from '@storybook/addon-notes';
+import { moduleMetadata, storiesOf } from '@storybook/angular';
 
 import { ButtonComponent } from './button.component';
 
