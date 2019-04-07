@@ -12,5 +12,19 @@
       "automerge": false
     }
   },
-  "schedule": ["after 10pm and before 5am on every weekday", "every weekend"]
+  "schedule": ["after 10pm and before 5am on every weekday", "every weekend"],
+  "packageRules": [
+    {
+      "packagePatterns": ["*"],
+      "enabled": false
+    },
+    {
+      "packagePatterns": ["^@storybook/", "^@bable/", "babel-loader", "prettier", "stylelint", "stylelint-config-standard"],
+      "enabled": true
+    },
+    {
+      "packagePatterns": ["circleci/node"],
+      "enabled": true
+    }
+  ]
 }
