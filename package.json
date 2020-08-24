@@ -96,7 +96,7 @@
     "prettier": "1.18.2",
     "protractor": "5.4.2",
     "stylelint": "10.1.0",
-    "stylelint-config-standard": "18.3.0",
+    "stylelint-config-standard": "20.0.0",
     "ts-node": "8.0.3",
     "tsickle": "0.34.3",
     "tslib": "1.9.3",
